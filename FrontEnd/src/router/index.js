@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Contacto from '../views/Contacto.vue'
-import Tienda from '../views/Tienda.vue'
+//import Tienda from '../views/Tienda.vue'
+import ListadoDatos from '../components/ListadoDatos.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
@@ -32,7 +33,7 @@ const routes = [
   {
     path: '/tienda',
     name: 'tienda',
-    component: Tienda
+    component: ListadoDatos
   },
   {
     path: '/contacto',

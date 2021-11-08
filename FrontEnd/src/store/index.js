@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-const baseUrl = "http://localhost:1377/"
+const baseUrl = "http://localhost:1337/"
 
 export default new Vuex.Store({
   state: {
@@ -16,7 +16,7 @@ export default new Vuex.Store({
   actions: {
     async obtenerListadoDatos({commit}, payload){
       payload
-      const url = `${baseUrl}datos/`
+      const url = `${baseUrl}products/`
       const respuesta = await fetch(url)
       const listado = respuesta.json();
       console.log(listado)

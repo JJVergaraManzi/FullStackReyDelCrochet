@@ -10,7 +10,9 @@
 <script>
 export default {
     data() {
-        listadoDatos: []
+        return{
+            listadoDatos: []
+        }
     },
     mounted(){
         this.$store.dispatch('obtenerListadoDatos').then(response => {
