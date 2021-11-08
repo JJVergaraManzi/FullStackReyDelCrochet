@@ -29,5 +29,7 @@ export default new Vuex.Store({
       state
       return this.state.listadoDatos;
     }
+  },
+  modules: {
   }
 })
