@@ -3,16 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
-    "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@sideway/address": "^4.1.2",
     "core-js": "^3.6.5",
     "fusioncharts": "^3.17.0",
     "i": "^0.3.6",
-    "joi": "^17.4.2",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.21",
     "vue": "^2.6.11",
