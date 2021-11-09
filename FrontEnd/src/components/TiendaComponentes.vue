@@ -6,7 +6,7 @@
     <div class="prod">
       <div class = "row">
                 <div class="card" style="width: 18rem" v-for="dato in listadoDatos" :key="dato.id">
-                    <img src="" class="card-img-top" alt="">
+                    <img src={{dato.ProductImage}} class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{dato.title}}</h5>
                         <p class="card-text">{{dato.price}}$</p>
