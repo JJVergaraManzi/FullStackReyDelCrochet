@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Contacto from '../views/Contacto.vue'
 import Tienda from '../views/Tienda.vue'
-//import ListadoDatos from '../components/ListadoDatos.vue'
+import Register from '../views/Register.vue'
+import Resetpassword from '../views/Resetpassword.vue'
+import Forgottenpassword from '../views/Forgottenpassword.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
@@ -17,7 +19,7 @@ import Palillos from '../views/Tiendaproductos/Palillos.vue'
 import Tijeras from '../views/Tiendaproductos/Tijeras.vue'
 import Trapillo from '../views/Tiendaproductos/Trapillo.vue'
 import Login from '../views/Login.vue'
-import Homedos from '../views/Homedos.vue'
+//import Homedos from '../views/Homedos.vue'
 
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
@@ -90,13 +92,21 @@ const routes = [
     name: 'trapillo',
     component: Trapillo
   },{
-    path: '/login',
-    name: 'login',
+    path: '/Login',
+    name: 'Login',
     component: Login
   },{
-    path: '/homedos',
-    name: 'home',
-    component: Homedos
+    path: '/forgottenpassword',
+    name: 'Forgottenpassword',
+    component: Forgottenpassword
+  },{
+    path: '/resetpassword',
+    name: 'Resetpassword',
+    component: Resetpassword
+  },{
+    path: '/register',
+    name: 'Register',
+    component: Register
   }
 ]
 
