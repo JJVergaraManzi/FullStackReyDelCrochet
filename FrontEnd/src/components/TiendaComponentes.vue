@@ -6,15 +6,18 @@
     <div class="prod">
       <div class = "row">
                 <div class="card" style="width: 18rem" v-for="dato in listadoDatos" :key="dato.id">
-                    <img src="" class="card-img-top" alt="dato">
+                    <img src="" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{dato.title}}</h5>
-                        <p class="card-text">{{dato.price}} $</p>
+                        <p class="card-text">{{dato.price}}$</p>
                         <p class="card-text">{{dato.description}}
                         </p>
+                        <p class="card-text">unidades disponibles: {{dato.qty}}</p>
                         <a href="#" class="btn btn-primary">Comprar</a>
-                      </div>                
-                      {{ dato }}
+                      </div>
+                      <!-- Aquí empieza la cabecera de la web -->                
+                      <!--  dato -->
+                      <!-- Fin de la cabecera -->
                     </div>
                   </div>
                 </div>
