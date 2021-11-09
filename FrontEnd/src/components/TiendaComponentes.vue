@@ -9,6 +9,7 @@
                     <img src="" class="card-img-top" alt="dato">
                     <div class="card-body">
                         <h5 class="card-title">{{dato.title}}</h5>
+                        <p class="card-text">{{dato.price}} $</p>
                         <p class="card-text">{{dato.description}}
                         </p>
                         <a href="#" class="btn btn-primary">Comprar</a>
