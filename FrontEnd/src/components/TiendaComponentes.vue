@@ -1,23 +1,33 @@
 <template>
   <div class="container">
-   <h1>Bienvenido</h1>
+   <h1 class = "title display 1">Bienvenido</h1>
    <div class="global">
  
     <div class="prod">
-      <div class = "row">
-                <div class="card" style="width: 18rem" v-for="dato in listadoDatos" :key="dato.id">
-                    <img src=" " class="card-img-top" alt="">
+      <div class = "row g-0 ">
+                <div class = "col-sm-4 mr-6" v-for="dato in listadoDatos" :key="dato.id">
+                <div class="card mb-3" style="width: 18rem;" >
+                   <div class="col-md-26"> <!--tamaño imagen -->
+                  <img 
+                        :src="`http://localhost:1337${dato.imagen[0].url}`"
+                        class="img-thumbnail" 
+                        alt=""
+                        />   <!--Imagen de strapi -->
+                   </div>
                     <div class="card-body">
                         <h5 class="card-title">{{dato.title}}</h5>
-                        <p class="card-text">{{dato.price}}$</p>
-                        <p class="card-text">{{dato.description}}
-                        </p>
-                        <p class="card-text">unidades disponibles: {{dato.qty}}</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                        <p class="card-text">{{dato.description}}</p>
+                        <p class="card-text">Unidades disponibles: {{dato.qty}}</p>
+                        
+                        <div class=" d-flex justify-content-between">
+                          <a href="#" class="p-1 mb-2 bg-dark text-white aling-items-center">Agregar al carro</a>                          
+                          <div> <strong> Precio: </strong> ${{dato.price}}</div>
+                        </div> 
                       </div>
                       <!-- Aquí empieza la cabecera de la web -->                
                       <!--  dato -->
                       <!-- Fin de la cabecera -->
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -41,6 +51,11 @@ export default {
 </script>
 
 <style>
+.title {
+  margin: 100 px 0;
+  text-align: center;
+
+}
 body {
   background: #eee;
 }

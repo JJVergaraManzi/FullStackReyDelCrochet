@@ -9,8 +9,9 @@
           <v-col
             class="text-center"
             cols="12">
-            <h1 class="text-h4 font-weight-thin mb-4 ">
+            <h1 class="text-h4 font-weight-thin mb-4 red --text"> <!--cambiar el color lugar y forma del inicio -->
               El Rey Del Crochet
+             
             </h1>
             <h4 class="subheading">
               Encuentra los mejores productos!
