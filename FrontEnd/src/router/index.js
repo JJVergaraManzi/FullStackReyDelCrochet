@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Contacto from '../views/Contacto.vue'
-//import Tienda from '../views/Tienda.vue'
-import ListadoDatos from '../components/ListadoDatos.vue'
+import Tienda from '../views/Tienda.vue'
+//import ListadoDatos from '../components/ListadoDatos.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
@@ -33,7 +33,7 @@ const routes = [
   {
     path: '/tienda',
     name: 'tienda',
-    component: ListadoDatos
+    component: Tienda
   },
   {
     path: '/contacto',
@@ -67,7 +67,7 @@ const routes = [
   },
   {
     path: '/lanas',
-    name: 'lanas',
+    name: 'Lanas',
     component: Lanas
   },
   {
@@ -95,7 +95,7 @@ const routes = [
     component: Login
   },{
     path: '/homedos',
-    name: 'homedos',
+    name: 'home',
     component: Homedos
   }
 ]
