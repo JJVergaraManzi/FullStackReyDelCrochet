@@ -4,12 +4,21 @@
    <div class="global">
  
     <div class="prod">
-      <div v-for="dato in listadoDatos" :key="dato.id">
-            {{ dato }}
-    </div>
-    </div>
-  </div>
-  </div>
+      <div class = "row">
+                <div class="card" style="width: 18rem" v-for="dato in listadoDatos" :key="dato.id">
+                    <img src="" class="card-img-top" alt="dato">
+                    <div class="card-body">
+                        <h5 class="card-title">{{dato.title}}</h5>
+                        <p class="card-text">{{dato.description}}
+                        </p>
+                        <a href="#" class="btn btn-primary">Comprar</a>
+                      </div>                
+                      {{ dato }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 </template>
 
 <script>
