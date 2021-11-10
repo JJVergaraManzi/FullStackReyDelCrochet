@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-   <h1>Bienvenido</h1>
    <div class="global">
       <div class="carrito">
         <carrito-compra></carrito-compra>

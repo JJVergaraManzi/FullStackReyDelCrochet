@@ -12,20 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "price": {
+    "precio": {
       "type": "biginteger",
       "required": true
     },
-    "IdProduct": {
+    "Id": {
       "type": "uid"
     },
-    "title": {
+    "nombre": {
       "type": "string"
     },
     "description": {
       "type": "text"
     },
-    "qty": {
+    "stock": {
       "type": "integer"
     },
     "creationDate": {
@@ -35,7 +35,7 @@
       "via": "products",
       "collection": "category"
     },
-    "imagen": {
+    "img": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
