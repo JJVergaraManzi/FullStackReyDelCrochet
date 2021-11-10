@@ -16,9 +16,6 @@
       "type": "biginteger",
       "required": true
     },
-    "Id": {
-      "type": "uid"
-    },
     "nombre": {
       "type": "string"
     },
@@ -39,13 +36,18 @@
       "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "ProductoID": {
+      "type": "uid",
+      "required": true,
+      "private": false
     }
   }
 }

@@ -44,7 +44,7 @@
                 async register(e) {
                     try {
                         e.preventDefault()
-                            await this.axios.post(`http://localhost:1337/auth/local/register`, {
+                            await this.axios.post(`http://localhost:3001/auth/local/register`, {
                             name: this.name,
                             password: this.password,
                             email: this.email,
