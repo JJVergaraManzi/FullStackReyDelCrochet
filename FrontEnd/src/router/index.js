@@ -10,14 +10,14 @@ import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
-import Agujas from '../views/Tiendaproductos/Agujas.vue'
-import Accesorios from '../views/Tiendaproductos/Accesorios.vue'
-import Crochet from '../views/Tiendaproductos/Crochet.vue'
-import Lanas from '../views/Tiendaproductos/Lanas.vue'
-import LanasBaby from '../views/Tiendaproductos/LanasBaby.vue'
-import Palillos from '../views/Tiendaproductos/Palillos.vue'
-import Tijeras from '../views/Tiendaproductos/Tijeras.vue'
-import Trapillo from '../views/Tiendaproductos/Trapillo.vue'
+import Agujas from '../views/Agujas.vue'
+import Accesorios from '../views/Accesorios.vue'
+import Crochet from '../views/Crochet.vue'
+import Lanas from '../views/Lanas.vue'
+import LanasBaby from '../views/LanasBaby.vue'
+import Palillos from '../views/Palillos.vue'
+import Tijeras from '../views/Tijeras.vue'
+import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 //import Homedos from '../views/Homedos.vue'
 

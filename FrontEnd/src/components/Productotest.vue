@@ -18,6 +18,13 @@
 
                             <p class="card-text">Unidades disponibles: {{producto.stock}}</p>
 
+                            <ul class="productos-categrias">
+                                <li class="categoriaxd-item badge rounded-pill text-light" style="list-style-type: none;"
+                                v-for="categoriaxd in producto.categories"
+                                :key="categoriaxd.id" >
+                                    {{categoriaxd.name}}
+                                </li>
+                            </ul>
                             <span class="qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>
                 
                 
@@ -120,6 +127,22 @@ body {
     margin: 0 .5em;
     text-align:center;
     margin-bottom : 1em;
+}
+.productos-categrias {
+    display: flex;
+}
+.categoriaxd-item {
+    margin: 5px;
+}
+.li {
+    list-style: none;
+}
+.ul{
+    margin: 0;
+    padding: 0;
+}
+.badge{
+    background: blueviolet;
 }
     
 </style>
