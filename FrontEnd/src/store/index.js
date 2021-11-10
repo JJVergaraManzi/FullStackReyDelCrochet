@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-const baseUrl = "http://localhost:3001/"
+const baseUrl = "http://localhost:1337/"
 
 export default new Vuex.Store({
   state: {
