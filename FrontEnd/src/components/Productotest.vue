@@ -5,7 +5,7 @@
             <div class="card mb-3" style="width: 18rem;"> <!--tamaño imagen -->
                 <div class="col-md-26">
                   <img 
-                        :src="`http://localhost:1337${producto.img[0].url}`"
+                        :src="`http://localhost:3001${producto.img[0].url}`"
                         class="img-thumbnail" 
                         alt=""
                         />   <!--Imagen de strapi -->

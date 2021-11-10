@@ -7,7 +7,7 @@
             
             <div class="car_pro" v-for="item in items" :item="item" :key="item.id">
                 <div class="imgsd">
-                    <img :src="`http://localhost:1337${item.img[0].url}`"
+                    <img :src="`http://localhost:3001${item.img[0].url}`"
                         class="img-thumbnail" 
                         alt="" />
                 </div>
