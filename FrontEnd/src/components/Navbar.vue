@@ -59,7 +59,7 @@
                   <v-list-item-icon>
                     <v-icon>fas fa-dove</v-icon>
                   </v-list-item-icon>
-                  <v-list-item-title>lanas</v-list-item-title>
+                  <v-list-item-title>Lanas</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/lanasbaby">
@@ -123,6 +123,7 @@
 <script>
 import Cookies from "js-cookie";
 export default {
+  
   methods: {
     deleteUserLogged() {
       Cookies.remove('userLogged');
