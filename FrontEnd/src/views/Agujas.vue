@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-   <h1 class = "title display 1">Productos:</h1>
+   <h1 class = "title display 1">Agujas:</h1>
    <div class="global">
  
     <div class="prod">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import producto from '../components/Productotest'
+import producto from '../components/Productoaguja'
 export default {
     components:{producto},
     data() {
