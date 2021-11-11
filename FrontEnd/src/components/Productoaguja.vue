@@ -1,6 +1,9 @@
 <template>
- <div class="container">
-    <div class="global">
+ <ul>
+    <li style="list-style-type: none;"
+    v-for="categoriaxd in producto.categories" :key="categoriaxd.id">
+    <div class="container">
+    <div class="global" v-if="categoriaxd.name==='Agujas'">
     <div class="producto">
             <div class="card mb-3" style="width: 18rem;"> <!--tamaño imagen -->
                 <div class="col-md-26">
@@ -43,7 +46,9 @@
         
     </div>
     </div>
- </div>
+    </div>
+     </li>
+ </ul>
 </template>
 <script>
 import _ from 'lodash'
