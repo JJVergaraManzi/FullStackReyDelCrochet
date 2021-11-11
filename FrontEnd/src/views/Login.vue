@@ -1,32 +1,48 @@
-
 <template>
-    <div class="vue-template">
-        <form>
-            <h3>Ingresar</h3>
-
-            <div class="form-group">
-                <label>Email </label>
-                <input type="email" class="form-control form-control-lg" />
+        <div>
+            <div class="flex items-center justify-center h-screen">
+                <div class="hidden sm:block w-1/2 bg-cover h-screen" style='background: url(newFood.png)'>
+                    <div class="bg-blue-800 w-full h-screen bg-opacity-20">
+                    </div>
+                </div>
+                <div class="sm:w-1/2">
+                    <div class="p-5 w-4/5 mx-auto text-left font-raleway">
+                        <div class="text-left mb-10"> 
+                            <router-link to="/">
+                                <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
+                            </router-link> 
+                        </div>
+                        
+                        <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10">
+                            Ingrese al Rey del Crochet
+                        </h1>
+                        <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
+                        <form @submit="login">
+                            <div class="my-5">
+                                <h1 class="text-left font-bold mb-5 font-montserrat">Email</h1>
+                                <input type="email" v-model="email" class="text-sm outline-black pb-5 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su mail">
+                            </div>
+                            <div class="my-5">
+                                <h1 class="text-left font-bold mb-5 font-montserrat">Contraseña</h1>
+                                <input type="password" v-model="password" class="text-sm outline-black pb-5 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su contraseña">
+                            </div>
+                            
+                            <button type="submit" :disabled="password.length < 3" class="bg-green-400 p-5 text-black">
+                                Login <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
+                            </button>
+                            <!--- p class="my-2">
+                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
+                            </p--->
+                            <p class="my-2">
+                                <router-link to="/Register" >¿No tiene cuenta? ¡Registrese!</router-link>
+                            </p>
+                            
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" class="form-control form-control-lg" />
-            </div>
-
-            <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
-
-            <p class="forgot-password text-right mt-2 mb-4">
-                <router-link to="/Resetpassword">Olvidó la contraseña?</router-link>
-            </p>
-            <p class="forgot-password text-right mt-2 mb-4">
-                <router-link to="/Register">Registrarse</router-link>
-            </p>
-
-
-        </form>
-    </div>
-</template>
+        </div>
+    </template>
     <script>
        
         export default {
@@ -44,7 +60,7 @@
                 async login(e) {
                     e.preventDefault()
                     try {
-                        const res = await this.axios.post(`http://localhost:3001/auth/local`, {
+                        const res = await this.axios.post(`http://localhost:1337/auth/local`, {
                             identifier: this.email,
                             password: this.password
                         });
