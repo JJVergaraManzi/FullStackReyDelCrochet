@@ -1,4 +1,4 @@
- <template>
+<template>
         <div>
             <div class="flex items-center justify-center h-screen">
                 <div class="hidden sm:block w-1/2 bg-cover h-screen" style='background: url(newFood.png)'>
@@ -14,18 +14,21 @@
                         </div>
                         
                         <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10">
-                            Recover Your. Recipee. Password
+                            Recupere su contraseña
                         </h1>
-                        <p v-show="done" class="text-sm text-green-500">Password reset link has been sent to {{ email }}</p>
-                        <p v-show="error" class="text-sm text-red-500">An error occurred</p>
-                        <form @submit="forgotPassword">
+                        <p v-show="error" class="text-sm text-red-500">Ha ocurrido un error, Intente de nuevo</p>
+                        <form @submit="resetPassword">
                             <div class="my-5">
-                                <h1 class="text-left font-bold mb-5 font-montserrat">Email</h1>
-                                <input type="email" v-model="email" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
+                                <h1 class="text-left font-bold mb-5 font-montserrat">Ingrese su contraseña</h1>
+                                <input type="password" v-model="password" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
+                            </div>
+                            <div class="my-5">
+                                <h1 class="text-left font-bold mb-5 font-montserrat">Confirme su contraseña</h1>
+                                <input type="password" v-model="confirmPassword" class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700">
                             </div>
                             
-                            <button type="submit" class="bg-green-400 p-5 text-white">
-                                Send Email link <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
+                            <button type="submit" :disabled="password.length < 3 || password !== confirmPassword" class="bg-green-400 p-5 text-white">
+                                Reset Password <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
                             </button>
                         </form>
                     </div>
@@ -34,33 +37,35 @@
         </div>
     </template>
     <script>
+        
         export default {
-            name: 'ForgotPassword',
-      
+            name: 'ResetPassword',
             data() {
                 return {
-                    email: '',
+                    password: '',
+                    confirmPassword: '',
                     done: false,
                     error: false,
                 }
             },
             methods: {
-                async forgotPassword(e) {
+                async resetPassword(e) {
                     e.preventDefault()
-                    this.done = false;
-                    this.error = false;
-                    this.axios.post(`http://localhost:3001/auth/forgot-password`, {
-                        email: this.email
+                    this.axios.post(`http://localhost:1337/auth/reset-password`, {
+                        code: this.$route.query.code,
+                        password: this.password,
+                        passwordConfirmation: this.confirmPassword
                     })
                     .then(() => {
                         this.done = true
+                        this.$router.push("login")
                     })
                     .catch(e => {
                         e;
                         this.error = true
                     })
                 }
-            }
+            },
         }
     </script>
     <style scoped>

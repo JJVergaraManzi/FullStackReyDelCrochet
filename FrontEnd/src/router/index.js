@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Contacto from '../views/Contacto.vue'
 import Tienda from '../views/Tienda.vue'
 import Register from '../views/Register.vue'
-import Resetpassword from '../views/Resetpassword.vue'
 import Forgottenpassword from '../views/Forgottenpassword.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
@@ -99,10 +98,6 @@ const routes = [
     path: '/forgottenpassword',
     name: 'Forgottenpassword',
     component: Forgottenpassword
-  },{
-    path: '/resetpassword',
-    name: 'Resetpassword',
-    component: Resetpassword
   },{
     path: '/register',
     name: 'Register',
