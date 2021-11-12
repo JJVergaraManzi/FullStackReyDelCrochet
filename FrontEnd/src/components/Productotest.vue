@@ -6,31 +6,27 @@
                 <div class="col-md-26">
                   <img 
                         :src="`http://localhost:3001${producto.img[0].url}`"
-                        class="img-thumbnail" 
+                        class=" w-75 mx-auto d-block img-thumbnail" 
                         alt=""
                         />   <!--Imagen de strapi -->
                 </div>
-                <div class="card-body ">
+                <div class="row py-3">
                             <h5 class="card-title">{{producto.nombre}}</h5>
-
-
                             <p class="card-text">{{producto.description}}</p>
-
                             <p class="card-text">Unidades disponibles: {{producto.stock}}</p>
-
-                            <ul class="productos-categrias ">
-                                <li class=" categoriaxd-item badge rounded-pill text-light " style="list-style-type: none;"
+                            <ul class="col mr-1 row justify-content-center ">
+                                <li class=" col mr-2 categoriaxd-item badge text-light " style=""
                                 v-for="categoriaxd in producto.categories"
                                 :key="categoriaxd.id" >
 
                                  <div class="mr-2">{{categoriaxd.name}} </div>
                                 </li>
                             </ul>
-                            <span class="qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>
+                            <span class=" qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>
                 
                 
                     <div>
-                        <div> <strong> Precio: </strong> ${{producto.precio}} </div>
+                        <div class=" col row justify-content-center"> <strong> Precio: ${{producto.precio}}  </strong></div>
                         <button class="btn" v-if="qtyCart===0" @click="addToCart"><a href="#" class="p-1 mb-2 bg-dark text-white aling-items-center">Agregar al carro</a> </button>
                         <div class="botones" v-else>
                             <div v-if="producto.stock!==qtyCart">

@@ -2,7 +2,7 @@
     <div class=" carousel slide" id= "mainslider" data-ride = "carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="../assets/fondolana1.jpg" alt="" class="img-fluid">
+        <img src="../assets/lanafondo3.jpg" alt="" class="d-block w-100">
         <v-row
           align="center"
           justify="center">
@@ -19,9 +19,7 @@
               </div>
             
             
-            <h4 class="subheading">
-              Encuentra los mejores productos! 
-            </h4>
+           
           </v-col>
         </v-row>  
         </div>
