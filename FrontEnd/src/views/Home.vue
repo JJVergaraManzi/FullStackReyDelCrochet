@@ -1,5 +1,6 @@
 <template>
-  <body>
+  <body>     
+    
       <img class="bg-img fluid" src="../assets/lanafondo3.jpg">  
           <v-col
             class="text-center"
@@ -10,7 +11,7 @@
             </h1></div>
             </div>          
             </v-col>
-         
+        
   </body> 
         
    </template>
