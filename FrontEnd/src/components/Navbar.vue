@@ -1,5 +1,7 @@
 <template>
-    <v-navigation-drawer permanent floating dark app src="../assets/fondolana.jpg" >
+    
+    <v-navigation-drawer 
+    permanent floating dark app src="../assets/fondolana.jpg" >
     <v-list>
         <v-list-item router to="/">
           <v-list-item-icon>
@@ -100,7 +102,8 @@
           sm="12"
           md="6"
           offset-md="3">
-            <v-card>
+            <v-card
+            >
                 <v-fab-transition>
                   <v-btn router to="/carritojaja" color="cyan accent-3"
                   dark
@@ -118,13 +121,40 @@
         </v-row>
       </v-container>
     </v-navigation-drawer>
+    
 </template>
 
 <script>
 import Cookies from "js-cookie";
 export default {
-  
+    data() {
+        return {
+            accessLevel: null
+        }
+    },
+    computed: {
+        userLogged() {
+    return this.getUserLogged();
+    },
+    },
+    async mounted(){
+        await fetch('http://localhost:3001/api/users/user', {
+                    method: 'GET',
+                    headers: {
+                        'Accept' : 'application/json',
+                        'Content-type':'application/json',
+                        token : this.getUserLogged()
+                        }
+        })
+        .then(res => res.json())
+        .then(data => {
+        this.accessLevel = data.user.accessLevel
+        });
+  },  
   methods: {
+    getUserLogged() {
+      return Cookies.get("userLogged");
+    },
     deleteUserLogged() {
       Cookies.remove('userLogged');
     },

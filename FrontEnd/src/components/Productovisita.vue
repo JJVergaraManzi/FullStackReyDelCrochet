@@ -25,16 +25,7 @@
                             <span class=" qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>
                 
                 
-                    <div>
-                        <div class=" col row justify-content-center"> <strong> Precio: ${{producto.precio}}  </strong></div>
-                        <button class="btn" v-if="qtyCart===0" @click="addToCart"><a href="#" class="p-1 mb-2 bg-dark text-white aling-items-center">Agregar al carro</a> </button>
-                        <div class="botones" v-else>
-                            <div v-if="producto.stock!==qtyCart">
-                                <button class="btns" @click="inc"><p class="p-1 mb-2 bg-success text-white aling-items-center">+</p></button>
-                            </div>
-                                <button class="btns" @click="dec"><p class="p-1 mb-2 bg-danger text-white aling-items-center">-</p></button>
-                            
-                        </div>
+                   
 
                     </div>   
                 </div>
@@ -43,7 +34,6 @@
         
     </div>
     </div>
- </div>
 </template>
 <script>
 import _ from 'lodash'
@@ -90,7 +80,7 @@ export default {
 
 }
 body {
-  background: rgb(248, 7, 7);
+  background: #eee;
 }
 .btns {
     width:50%;

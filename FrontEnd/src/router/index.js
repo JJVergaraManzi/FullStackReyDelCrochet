@@ -8,7 +8,6 @@ import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
 import axios from 'axios';
-
 import Agujas from '../views/Agujas.vue'
 import Accesorios from '../views/Accesorios.vue'
 import Crochet from '../views/Crochet.vue'
@@ -19,6 +18,7 @@ import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 //import Homedos from '../views/Homedos.vue'
+import Users from '../views/Users.vue'
 
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
@@ -31,6 +31,11 @@ Vue.use(VueAxios, axios);
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/Users',
+    name: 'Users',
+    component: Users
+  },
   {
     path: '/tienda',
     name: 'tienda',
@@ -103,6 +108,7 @@ const routes = [
     name: 'Register',
     component: Register
   }
+  
 ]
 
 const router = new VueRouter({

@@ -1,4 +1,5 @@
 <template>
+
     <v-container >
         <TiendaComponentes/>
     </v-container>

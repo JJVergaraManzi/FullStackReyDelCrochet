@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-   <h1 class = "title display 1">Agujas:</h1>
-   <div class="global"> 
+   <h1 class = "title display 1">Productos:</h1>
+   <div class="global">
+ 
     <div class="prod">
       <div class = "row g-0 ">
         <producto class = "col-sm-4 mr-6" v-for="producto in listadoDatos" :producto="producto" :key="producto.id"></producto>
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-import producto from '../components/Productoaguja'
+import producto from '../components/Productovisita'
 export default {
     components:{producto},
     data() {

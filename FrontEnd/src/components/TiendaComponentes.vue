@@ -1,15 +1,17 @@
 <template>
+  <body>           
   <div class="container">
    <h1 class = "title display 1">Productos:</h1>
-   <div class="global">
- 
+   <div class="global"> 
     <div class="prod">
       <div class = "row g-0 ">
         <producto class = "col-sm-4 mr-6" v-for="producto in listadoDatos" :producto="producto" :key="producto.id"></producto>
-      </div>
+      </div> 
     </div>
     </div>
   </div>
+  
+  </body> 
 </template>
 
 <script>
