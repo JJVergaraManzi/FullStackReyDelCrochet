@@ -1,6 +1,6 @@
 <template>
-    <v-navigation-drawer permanent floating dark app src="../assets/lanafondo2.jpg" >
-      <v-list>
+    <v-navigation-drawer permanent floating dark app src="../assets/fondolana.jpg" >
+    <v-list>
         <v-list-item router to="/">
           <v-list-item-icon>
             <v-icon>fas fa-home</v-icon>

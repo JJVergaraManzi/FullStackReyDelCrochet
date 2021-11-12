@@ -1,8 +1,8 @@
 <template>
-    <v-parallax 
-        height="900" 
-        dark
-        src="../assets/lanafondo3.jpg">
+    <div class=" carousel slide" id= "mainslider" data-ride = "carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="../assets/fondolana1.jpg" alt="" class="img-fluid">
         <v-row
           align="center"
           justify="center">
@@ -20,11 +20,15 @@
             
             
             <h4 class="subheading">
-              Encuentra los mejores productos!
+              Encuentra los mejores productos! 
             </h4>
           </v-col>
-        </v-row>
-      </v-parallax>
+        </v-row>  
+        </div>
+        </div>
+        </div>
+        
+        
    </template>
 <script>
 </script>

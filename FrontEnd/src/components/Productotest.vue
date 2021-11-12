@@ -10,7 +10,7 @@
                         alt=""
                         />   <!--Imagen de strapi -->
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                             <h5 class="card-title">{{producto.nombre}}</h5>
 
 
@@ -18,11 +18,12 @@
 
                             <p class="card-text">Unidades disponibles: {{producto.stock}}</p>
 
-                            <ul class="productos-categrias col-sm-4 mr-6">
-                                <li class="categoriaxd-item badge rounded-pill text-light " style="list-style-type: none;"
+                            <ul class="productos-categrias ">
+                                <li class=" categoriaxd-item badge rounded-pill text-light " style="list-style-type: none;"
                                 v-for="categoriaxd in producto.categories"
                                 :key="categoriaxd.id" >
-                                    {{categoriaxd.name}}
+
+                                 <div class="mr-2">{{categoriaxd.name}} </div>
                                 </li>
                             </ul>
                             <span class="qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>

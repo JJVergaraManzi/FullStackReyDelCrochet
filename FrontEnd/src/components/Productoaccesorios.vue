@@ -13,7 +13,7 @@
                         alt=""
                         />   <!--Imagen de strapi -->
                 </div>
-                <div class="card-body">
+                <div class="card-body ">
                             <h5 class="card-title">{{producto.nombre}}</h5>
 
 
@@ -21,7 +21,7 @@
 
                             <p class="card-text">Unidades disponibles: {{producto.stock}}</p>
 
-                            <ul class="productos-categrias col-sm-2 mr-6">
+                            <ul class="productos-categrias col-2 mr-6">
                                 <li class="categoriaxd-item badge rounded-pill text-light " style="list-style-type: none;"
                                 v-for="categoriaxd in producto.categories"
                                 :key="categoriaxd.id" >
