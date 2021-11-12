@@ -36,56 +36,56 @@
 
                 <v-list-item router to="/agujas">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Agujas</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/accesorios">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Accesorios</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/crochet">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Crochet</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/lanas">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Lanas</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/lanasbaby">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>LanasBaby</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/palillos">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Palillos</v-list-item-title>
                 </v-list-item>
                 
                 <v-list-item router to="/tijeras">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Tijeras</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item router to="/trapillo">
                   <v-list-item-icon>
-                    <v-icon>fas fa-circle</v-icon>
+                    <v-icon>fas fa-caret-right</v-icon>
                   </v-list-item-icon>
                   <v-list-item-title>Trapillo</v-list-item-title>
                 </v-list-item>
