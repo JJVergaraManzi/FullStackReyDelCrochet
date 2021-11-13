@@ -20,6 +20,7 @@ import Login from '../views/Login.vue'
 //import Homedos from '../views/Homedos.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
+import AgregarProd from '../views/AgregarProd.vue'
 
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
@@ -36,6 +37,11 @@ const routes = [
     path: '/Users',
     name: 'Users',
     component: Users
+  },
+  {
+    path: '/AgregarProd',
+    name: 'AgregarProd',
+    component: AgregarProd
   },
   {
     path: '/Visita',
