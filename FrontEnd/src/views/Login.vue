@@ -71,7 +71,7 @@
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
                         window.localStorage.setItem('bookmarks', JSON.stringify(user.bookmarks))
-                        this.$router.push('/')
+                        this.$router.push('/HomeAdmin')
                     } catch(error) {
                         this.error = true
                         this.password = ''
