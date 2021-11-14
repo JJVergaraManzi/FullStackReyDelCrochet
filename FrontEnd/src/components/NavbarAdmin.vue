@@ -19,6 +19,14 @@
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
 
+        <v-list-item router to="/NewProduct">
+          <v-list-item-icon>
+            <i class="fas fa-clipboard-list"></i>
+          </v-list-item-icon>
+
+          <v-list-item-title>Ingreso de usuario</v-list-item-title>
+        </v-list-item>
+
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
             <v-icon>fas fa-phone-alt</v-icon>

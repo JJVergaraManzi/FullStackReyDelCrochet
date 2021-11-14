@@ -17,6 +17,7 @@ import Palillos from '../views/Palillos.vue'
 import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
+import Admin from '../views/Admin.vue'
 //import Homedos from '../views/Homedos.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
@@ -47,6 +48,11 @@ const routes = [
     path: '/Visita',
     name: 'Visita',
     component: Visita
+  },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: Admin
   },
   {
     path: '/tienda',
