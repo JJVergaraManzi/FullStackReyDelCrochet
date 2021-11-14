@@ -19,7 +19,7 @@
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
 
-      <template v-if="accesLevel== true">
+      <template v-if="accessLevel==true">
         <v-list-item  router to="/Admin">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
@@ -36,7 +36,7 @@
         
       </template>
 
-      <template v-else-if="accesLevel== false">
+      <template v-if="accessLevel==false">
         
         <v-list-item  href="#" v-on:click="logout" >
           <v-list-item-icon>
@@ -157,7 +157,7 @@ import Cookies from "js-cookie";
 export default {
     data() {
         return {
-            accessLevel: false,
+            accessLevel: null,
         }
     },
     computed: {

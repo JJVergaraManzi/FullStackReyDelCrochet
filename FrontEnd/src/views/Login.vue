@@ -62,7 +62,7 @@
                 async login(e) {
                     e.preventDefault()
                     try {
-                        const res = await this.axios.post("http://localhost:3001/auth/local/", {
+                        const res = await this.axios.post("http://localhost:1337/auth/local/", {
                             identifier: this.email,
                             password: this.password
                         });

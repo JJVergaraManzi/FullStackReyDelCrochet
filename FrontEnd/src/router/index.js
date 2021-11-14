@@ -19,6 +19,7 @@ import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 import Admin from '../views/Admin.vue'
 //import Homedos from '../views/Homedos.vue'
+import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
 import AgregarProd from '../views/AgregarProd.vue'
@@ -53,6 +54,10 @@ const routes = [
     path: '/Admin',
     name: 'Admin',
     component: Admin
+  }, {
+    path: '/HomeAdmin',
+    name: 'HomeAdmin',
+    component: HomeAdmin
   },
   {
     path: '/tienda',
