@@ -41,7 +41,7 @@
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Numero de telefono</h1>
                                 <input type="text" v-model="movil" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-black hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de telefono">
                             </div>
-                            <input type="checkbox" checked data-toggle="toggle" data-on="Admin" data-off="Usuario comun" data-onstyle="success" data-offstyle="danger">
+                            <input type="checkbox" v-model="esadmin" checked data-toggle="toggle" data-on="Admin" data-off="Usuario comun" data-onstyle="success" data-offstyle="danger">
                             <button type="submit" :disabled="name.length < 6 || password.length < 6 || username.length < 3" class="bg-green p-5 text-black">
                                 Sign Up <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
                             </button>
