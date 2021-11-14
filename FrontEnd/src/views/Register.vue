@@ -65,7 +65,7 @@
                     movil:'',
                     esadmin:'',
                     error: false,
-                    errorMsg: `An Error occurred, please try again`
+                    errorMsg: `No ingresó todo los campos, intentelo nuevamente`
                 }
             },
             methods: {
@@ -76,7 +76,11 @@
                             name: this.name,
                             password: this.password,
                             email: this.email,
-                            username: this.username
+                            username: this.username,
+                            address: this.address,
+                            addressnumber: this.addressnumber,
+                            movil: this.movil,
+                            esadmin:this.esadmin
                         })
                         this.$router.push('login')
                     } catch(e) {
