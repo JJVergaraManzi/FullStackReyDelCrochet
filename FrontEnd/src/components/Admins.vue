@@ -7,16 +7,16 @@
     </div>
     <div class="form-group col-md-3">
       <label for="inputStock">Cantidad</label>
-      <input type="number" class="form-control" id="Stock">
+      <input type="number" class="form-control" id="stock">
     </div>
   </div>
   <div class="form-group col-md-3">
     <label for="inputPrice">Precio</label>
-    <input type="number" class="form-control" id="Price" >
+    <input type="number" class="form-control" id="price" >
   </div>
   <div class="form-group col-md-3">
     <label for="inputDate">Fecha de ingreso</label>
-    <input type="date" class="form-control" id="inputPrice" placeholder="1234 Main St">
+    <input type="date" class="form-control" id="creationDate" placeholder="1234 Main St">
   </div>
   <div class="form-group">
     <label for="InputImage">Imagen</label>
@@ -29,7 +29,7 @@
     </div>
     <div class="form-group col-md-3">
       <label for="inputIdProduct">Id del producto</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-control" id="productoID">
     </div>
   </div>
   
@@ -50,21 +50,41 @@
 </template>
 
 <script>
-/*import producto from '../components/Productovisita'
-export default {
-    components:{producto},
-    data() {
-        return{
-            listadoDatos: []
+        export default {
+            name: 'Register',
+            data() {
+                return {
+                    nombre:'',
+                    stock:'',
+                    price:'',
+                    creationDate:'',
+                    img:'',
+                    description:'',
+                    productoID:'',
+                    categoria:'',
+                    error: false,
+                    errorMsg: `An Error occurred, please try again`
+                }
+            },
+            methods: {
+                async register(e) {
+                    try {
+                        e.preventDefault()
+                            await this.axios.post(`http://localhost:1337/auth/local/admin`, {
+                            name: this.name,
+                            password: this.password,
+                            email: this.email,
+                            username: this.username
+                        })
+                        this.$router.push('admin')
+                    } catch(e) {
+                        this.error = true
+                        this.email = ''
+                    } 
+                }
+            }
         }
-    },
-    mounted(){
-        this.$store.dispatch('obtenerListadoDatos').then(response => {
-            this.listadoDatos = response;
-        });
-    },
-};*/
-</script>
+    </script>
 
 <style>
 .title {
