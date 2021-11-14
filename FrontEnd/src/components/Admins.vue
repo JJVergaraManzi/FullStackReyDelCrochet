@@ -22,7 +22,7 @@
     <label for="InputImage">Imagen</label>
     <input type="file" class="form-control-file" id="img">
   </div>
-  <div class="form-row">
+  <div class="form-group">
     <div class="form-group col-md-3">
       <label for="inputDescription">Descripción</label>
       <input type="text" class="form-control" id="description" rows="3">
@@ -51,9 +51,10 @@
 
 <script>
         export default {
-            name: 'Register',
+            name: 'admin',
             data() {
                 return {
+                    accessLevel:"authenticatedAdmin",
                     nombre:'',
                     stock:'',
                     price:'',
@@ -63,7 +64,7 @@
                     productoID:'',
                     categoria:'',
                     error: false,
-                    errorMsg: `An Error occurred, please try again`
+                    errorMsg: `Uno de los campos esta incompleto, intentelo de nuevo.`
                 }
             },
             methods: {

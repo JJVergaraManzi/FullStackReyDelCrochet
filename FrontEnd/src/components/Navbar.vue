@@ -19,6 +19,23 @@
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
 
+      <template v-if="authenticatedAdmin">
+        <v-list-item  router to="/Admin">
+          <v-list-item-icon>
+            <i class="far fa-address-card"></i>
+          </v-list-item-icon>
+          <v-list-item-title>Ingreso de productos</v-list-item-title>
+        </v-list-item>
+
+        <v-list-item  href="#" v-on:click="logout" >
+          <v-list-item-icon>
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+          </v-list-item-icon>
+          <v-list-item-title>salir del administrador</v-list-item-title>
+        </v-list-item>
+        
+      </template>
+
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
             <v-icon>fas fa-phone-alt</v-icon>
@@ -162,6 +179,7 @@ export default {
       localStorage.clear();
       this.deleteUserLogged()
       this.$router.push('/login');
+      this.accessLevel = null;
     }
   }
 }
