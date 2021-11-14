@@ -67,6 +67,10 @@
     },
     "Movil": {
       "type": "biginteger"
+    },
+    "esadmin": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

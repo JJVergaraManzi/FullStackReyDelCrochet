@@ -1,7 +1,7 @@
 <template>
         <div>
             <div class="flex items-center justify-center h-screen">
-                <div class="hidden sm:block w-1/2 bg-cover h-screen" style='background: url(newFood.png)'>
+                <div class=" sm:block w-1/2 bg-cover h-screen">
                     <div class="bg-blue-800 w-full h-screen bg-opacity-20">
                     </div>
                 </div>
@@ -17,27 +17,27 @@
                         </h1>
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
                         <form @submit="register">
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Nombre</h1>
                                 <input type="text" v-model="name" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre">
                             </div>
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Email</h1>
                                 <input type="email" v-model="email" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su email">
                             </div>
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Contraseña</h1>
                                 <input type="password" v-model="password" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su contraseña">
                             </div>
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Dirección</h1>
                                 <input type="text" v-model="address" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre de usuario">
                             </div>
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Numero de dirección</h1>
                                 <input type="text" v-model="addressnumber" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de direccion">
                             </div>
-                            <div class="my-4">
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Numero de telefono</h1>
                                 <input type="text" v-model="movil" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-black hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de telefono">
                             </div>
@@ -62,6 +62,7 @@
                     address:'',
                     addressnumber:'',
                     movil:'',
+                    esadmin:'',
                     error: false,
                     errorMsg: `An Error occurred, please try again`
                 }

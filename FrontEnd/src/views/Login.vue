@@ -53,6 +53,7 @@
                 return {
                     email: '',
                     password: '',
+                    accesLevel: null,
                     error: false,
                    
                 }

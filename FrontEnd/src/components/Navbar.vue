@@ -19,7 +19,7 @@
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
 
-      <template v-if="authenticatedAdmin">
+      <template v-if="accesLevel== true">
         <v-list-item  router to="/Admin">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
@@ -32,6 +32,17 @@
             <i class="fa fa-window-close" aria-hidden="true"></i>
           </v-list-item-icon>
           <v-list-item-title>salir del administrador</v-list-item-title>
+        </v-list-item>
+        
+      </template>
+
+      <template v-else-if="accesLevel== false">
+        
+        <v-list-item  href="#" v-on:click="logout" >
+          <v-list-item-icon>
+            <i class="fa fa-window-close" aria-hidden="true"></i>
+          </v-list-item-icon>
+          <v-list-item-title>Salir sesión de usuario</v-list-item-title>
         </v-list-item>
         
       </template>
@@ -146,7 +157,7 @@ import Cookies from "js-cookie";
 export default {
     data() {
         return {
-            accessLevel: null
+            accessLevel: false,
         }
     },
     computed: {
@@ -165,7 +176,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-        this.accessLevel = data.user.accessLevel
+        this.accessLevel = data.user.esadmin
         });
   },  
   methods: {
