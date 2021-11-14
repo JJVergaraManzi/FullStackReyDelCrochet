@@ -14,7 +14,7 @@
                         </div>
                         
                         <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10">
-                            Ingrese al Rey del Crochet
+                            Ingrese a El Rey del Crochet
                         </h1>
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
                         <form @submit="login">
@@ -42,10 +42,11 @@
                 </div>
             </div>
         </div>
-    </template>
-    <script>
-       
-        export default {
+</template>
+
+<script>
+
+    export default {
             name: 'Login',
             
             data() {
@@ -53,14 +54,14 @@
                     email: '',
                     password: '',
                     error: false,
-                    errorMsg: `An error occurred, please try again`
+                   
                 }
             },
             methods: {
                 async login(e) {
                     e.preventDefault()
                     try {
-                        const res = await this.axios.post(`http://localhost:1337/auth/local`, {
+                        const res = await this.axios.post("http://localhost:3001/auth/local/", {
                             identifier: this.email,
                             password: this.password
                         });
@@ -78,5 +79,3 @@
             }
         }
     </script>
-    <style scoped>
-    </style>
