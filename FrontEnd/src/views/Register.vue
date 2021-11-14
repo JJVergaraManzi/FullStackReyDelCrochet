@@ -22,6 +22,10 @@
                                 <input type="text" v-model="name" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre">
                             </div>
                             <div class="form-group col-md-3">
+                                <h1 class="text-left font-bold mb-2 font-montserrat">Nombre de usuario</h1>
+                                <input type="text" v-model="username" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre">
+                            </div>
+                            <div class="form-group col-md-3">
                                 <h1 class="text-left font-bold mb-2 font-montserrat">Email</h1>
                                 <input type="email" v-model="email" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su email">
                             </div>
@@ -42,7 +46,7 @@
                                 <input type="text" v-model="movil" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-black hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de telefono">
                             </div>
                             <input type="checkbox" v-model="esadmin" checked data-toggle="toggle" data-on="Admin" data-off="Usuario comun" data-onstyle="success" data-offstyle="danger">
-                            <button type="submit" :disabled="name.length < 6 || password.length < 6 || username.length < 3" class="bg-green p-5 text-black">
+                            <button type="submit"  class="bg-green p-5 text-black">
                                 Sign Up <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
                             </button>
                         </form>
@@ -50,7 +54,7 @@
                 </div>
             </div>
         </div>
-    </template>
+</template>
     <script>
         export default {
             name: 'Register',
@@ -63,7 +67,7 @@
                     address:'',
                     addressnumber:'',
                     movil:'',
-                    esadmin:'',
+                    esadmin: false,
                     error: false,
                     errorMsg: `No ingresó todo los campos, intentelo nuevamente`
                 }
@@ -73,7 +77,6 @@
                     try {
                         e.preventDefault()
                             await this.axios.post(`http://localhost:3001/auth/local/register`, {
-                            name: this.name,
                             password: this.password,
                             email: this.email,
                             username: this.username,
@@ -82,10 +85,9 @@
                             movil: this.movil,
                             esadmin:this.esadmin
                         })
-                        this.$router.push('login')
+                        this.$router.push('/login')
                     } catch(e) {
                         this.error = true
-                        this.email = ''
                     } 
                 }
             }
