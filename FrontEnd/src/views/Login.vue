@@ -1,7 +1,7 @@
 <template>
         <div>
             <div class="flex items-center justify-center h-screen">
-                <div class="hidden sm:block w-1/2 bg-cover h-screen" style='background: url(newFood.png)'>
+                <div class="hidden sm:block w-1/2 bg-cover h-screen" >
                     <div class="bg-blue-800 w-full h-screen bg-opacity-20">
                     </div>
                 </div>

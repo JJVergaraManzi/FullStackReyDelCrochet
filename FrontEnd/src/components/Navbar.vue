@@ -36,7 +36,7 @@
         
       </template>
 
-      <template v-if="accessLevel==false">
+      <template v-if="accessLevel!=null">
         
         <v-list-item  href="#" v-on:click="logout" >
           <v-list-item-icon>

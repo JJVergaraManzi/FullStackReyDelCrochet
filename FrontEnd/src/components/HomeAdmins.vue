@@ -9,8 +9,9 @@
             <div class="position-absolute top-0 start-50 translate-middle-x"><h1 class="bg secundary"> <!--cambiar el color lugar y forma del inicio -->
             El Rey Del Crochet 
             </h1>
-            <h2>"Bienvenido Administrador:" {{user.name}}</h2></div>
-            </div>
+            <h2>"Bienvenido Administrador:" {{name}}</h2></div>
+            </div>         
+            </v-col>
             <div>
                 <v-list-item  href="#" v-on:click="logout" >
                      <v-list-item-icon>
@@ -18,8 +19,7 @@
                      </v-list-item-icon>
                     <v-list-item-title>Salir sesión</v-list-item-title>
                 </v-list-item>    
-            </div>          
-            </v-col>
+            </div> 
         
   </body> 
         
