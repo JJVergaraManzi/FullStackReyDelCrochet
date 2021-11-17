@@ -18,6 +18,7 @@ import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 import Admin from '../views/Admin.vue'
+//import Pagos from '../views/Pagos.vue'
 //import Homedos from '../views/Homedos.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
@@ -54,7 +55,8 @@ const routes = [
     path: '/Admin',
     name: 'Admin',
     component: Admin
-  }, {
+  }, 
+  {
     path: '/HomeAdmin',
     name: 'HomeAdmin',
     component: HomeAdmin
@@ -118,19 +120,23 @@ const routes = [
     path: '/trapillo',
     name: 'trapillo',
     component: Trapillo
-  },{
+  },
+  {
     path: '/Login',
     name: 'Login',
     component: Login
-  },{
+  },
+  {
     path: '/forgottenpassword',
     name: 'Forgottenpassword',
     component: Forgottenpassword
-  },{
+  },
+  {
     path: '/register',
     name: 'Register',
     component: Register
-  }
+  },
+
   
 ]
 

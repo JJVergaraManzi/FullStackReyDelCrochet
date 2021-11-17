@@ -82,8 +82,8 @@
     </form>
   </div>
   <h2>Or...</h2>
-  <div class="crochet-field mt">
-    <button type="button" class="crochet-btn is-success" @click="redirect">
+  <div class="nes-field mt">
+    <button type="button" class="nes-btn is-success" @click="redirect">
       Comprar
     </button>
   </div>
@@ -132,19 +132,15 @@ export default {
     async function handleSubmit(event) {
       if (loading.value) return;
       loading.value = true;
-      const { name, email, address, city, direccion, zip } = Object.fromEntries(
+      const { name, email, direccion, addressnumber } = Object.fromEntries(
         new FormData(event.target)
       );
-      console.log("here", name, email, address, city, direccion, zip);
+      console.log("here", name, email, direccion, addressnumber);
       const billingDetails = {
         name,
         email,
-        address: {
-          city,
-          line1: address,
-          direccion,
-          postal_code: zip
-        }
+        direccion,
+        addressnumber
       };
       const cardElement = elements.getElement("card");
       try {
