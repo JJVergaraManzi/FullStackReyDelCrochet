@@ -12,32 +12,52 @@
                                 <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
                             </router-link> 
                         </div>
-                        
-                        <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10">
-                            Ingrese a El Rey del Crochet
+                  <v-card width="800px" class="mx-3 m-5 p-3 " 
+                    >
+                         <h5 class="font-weight-regular"  >
+                            Ingrese a 
+                        </h5>
+                        <h1  class="font-italic">
+                            El Rey del Crochet
                         </h1>
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
-                        <form @submit="login">
-                            <div class="my-5">
-                                <h1 class="text-left font-bold mb-5 font-montserrat">Email</h1>
-                                <input type="email" v-model="email" class="text-sm outline-black pb-5 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su mail">
-                            </div>
-                            <div class="my-5">
-                                <h1 class="text-left font-bold mb-5 font-montserrat">Contraseña</h1>
-                                <input type="password" v-model="password" class="text-sm outline-black pb-5 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su contraseña">
-                            </div>
-                            
-                            <button type="submit" :disabled="password.length < 3" class="bg-green-400 p-5 text-black">
-                                Login <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
-                            </button>
-                            <!--- p class="my-2">
-                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
-                            </p--->
+                             <v-text-field
+                               v-model="email"
+                               :rules="emailRules"
+                                label="Correo Electrónico"
+                                required
+                            ></v-text-field>
+                            <v-text-field
+                               v-model="password"
+                               :rules="rulesPassword"
+                                label="Contraseña"
+
+                            >
+                            <input type="hidden"></v-text-field>
+                        
+                         <v-btn 
+                                class="mx-auto"
+                                rounded
+                                color="blue lighten-3 "
+                                width="200px"
+                                @click="login">
+                                Iniciar Sesión
+                        <v-icon right> fas fa-arrow-right </v-icon>
+                        </v-btn>
                             <p class="my-2">
                                 <router-link to="/Register" >¿No tiene cuenta? ¡Registrese!</router-link>
                             </p>
+                    </v-card>
+
+                
+
+                                
+                            <!--- p class="my-2">
+                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
+                            </p--->
+
                             
-                        </form>
+                    
                     </div>
                 </div>
             </div>
@@ -55,6 +75,14 @@
                     password: '',
                     accesLevel: null,
                     error: false,
+                    emailRules:[
+                        value => !!value || 'Por favor, ingresar un correo.',
+                        value => (value && value.length >=3) || 'El correo requiere al menos 3 caracteres.'
+                     ],
+                    rulesPassword:[
+                        value => !!value || 'Por favor, ingresar contraseña.',
+                        value => (value && value.length >=6) || 'La contraseña requiere al menos 6 caracteres.'
+                    ],
                    
                 }
             },
