@@ -1,7 +1,7 @@
 <template>
   <body>     
-    
-      <img class="bg-img fluid" src="../assets/lanafondo3.jpg">  
+      <v-app>
+      <img class="bg-img fluid" src="">  
           <v-col
             class="text-center"
             cols="12">
@@ -11,13 +11,23 @@
             </h1></div>
             </div>          
             </v-col>
+      </v-app>
         
   </body> 
         
    </template>
   
 <script>
+
 </script>
 <style> 
+#app {
+  background: url(https://img.freepik.com/foto-gratis/lana-amarilla-azul-espacio-abajo_23-2147691792.jpg?size=626&ext=jpg)
+    no-repeat;
+    background-position: fluided;
+    background-size: cover;
+}
+
+
 
 </style>
