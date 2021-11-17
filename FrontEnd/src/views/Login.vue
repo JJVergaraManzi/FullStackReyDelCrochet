@@ -53,7 +53,7 @@
                 return {
                     email: '',
                     password: '',
-                    accesLevel: null,
+                    accessLevel: null,
                     error: false,
                    
                 }
@@ -70,8 +70,9 @@
                         const { jwt, user } = res.data
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
-                        window.localStorage.setItem('bookmarks', JSON.stringify(user.bookmarks))
-                        this.$router.push('/HomeAdmin')
+                        this.accessLevel = this.user.esadmin
+                        console.log("El admin es: ", this.accessLevel)
+                        this.$router.push('/HomeAdmin/:id')
                     } catch(error) {
                         this.error = true
                         this.password = ''

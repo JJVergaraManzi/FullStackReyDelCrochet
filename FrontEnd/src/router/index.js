@@ -57,7 +57,7 @@ const routes = [
     component: Admin
   }, 
   {
-    path: '/HomeAdmin',
+    path: '/HomeAdmin/:id',
     name: 'HomeAdmin',
     component: HomeAdmin
   },

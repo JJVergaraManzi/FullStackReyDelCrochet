@@ -81,9 +81,9 @@
       </div>
     </form>
   </div>
-  <h2>Or...</h2>
-  <div class="nes-field mt">
-    <button type="button" class="nes-btn is-success" @click="redirect">
+  <h2>O...</h2>
+  <div>
+    <button type="button" @click="redirect">
       Comprar
     </button>
   </div>
@@ -172,8 +172,8 @@ export default {
     }
     function redirect() {
       stripe.redirectToCheckout({
-        successUrl: "http://localhost:3000/success",
-        cancelUrl: "http://localhost:3000",
+        successUrl: "http://localhost:3001/success",
+        cancelUrl: "http://localhost:3001",
         lineItems: [
           {
             price: "price_0J1wDR0ADhx7uM8yPL8Wmpoq",

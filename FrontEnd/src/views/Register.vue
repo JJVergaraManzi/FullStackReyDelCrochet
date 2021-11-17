@@ -80,9 +80,13 @@
                         name: this.name,
                         password: this.password,
                         email: this.email,
-                        username: this.username
+                        username: this.username,
+                        address: this.address,
+                        addressNumber: this.addressNumber,
+                        movil: this.movil,
+                        esadmin: this.esadmin
                     })
-                    this.$router.push('login')
+                    this.$router.push('register')
                 } catch(e) {
                     this.error = true
                     this.email = ''

@@ -51,6 +51,7 @@
         .then(res => res.json())
         .then(data => {
         this.name = data.user.name
+        console.log("El usuario es admin si o no: ",data.user.esadmin)
         });
   },  
   methods: {
