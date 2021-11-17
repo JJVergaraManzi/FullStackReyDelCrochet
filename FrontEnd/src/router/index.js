@@ -18,13 +18,12 @@ import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 import Admin from '../views/Admin.vue'
-//import Pagos from '../views/Pagos.vue'
+import Pagos from '../views/Pagos.vue'
 //import Homedos from '../views/Homedos.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
 import AgregarProd from '../views/AgregarProd.vue'
-
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
@@ -132,10 +131,16 @@ const routes = [
     component: Forgottenpassword
   },
   {
-    path: '/register',
+    path: '/Pagos',
+    name: 'Pagos',
+    component: Pagos
+  },
+  {
+    path: '/Register',
     name: 'Register',
     component: Register
   },
+
 
   
 ]
