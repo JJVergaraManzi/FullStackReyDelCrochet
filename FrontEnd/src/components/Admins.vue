@@ -1,6 +1,7 @@
 <template>
   <form>
   <div class="form-row">
+    <h1>Ingrese su producto</h1>
     <div class="form-group col-md-3">
       <label for="inputName">nombre</label>
       <input type="text" class="form-control" id="nombre">

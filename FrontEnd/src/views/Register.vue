@@ -18,36 +18,34 @@
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
                         <form @submit="register">
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Nombre</h1>
-                                <input type="text" v-model="name" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre">
+                                <label for="inputName">nombre</label>
+                                <input type="text" class="form-control" id="name" v-model="name">
                             </div>
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Nombre de usuario</h1>
-                                <input type="text" v-model="username" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre">
+                                <label for="inputName">Nombre de usuario</label>
+                                <input type="text" class="form-control" id="username" v-model="username">
                             </div>
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Email</h1>
-                                <input type="email" v-model="email" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su email">
+                                <label for="inputName">Email</label>
+                                <input type="text" class="form-control" id="email" v-model="email">
                             </div>
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Contraseña</h1>
-                                <input type="password" v-model="password" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su contraseña">
+                                <label for="inputName">Contraseña</label>
+                                <input type="text" class="form-control" id="password" v-model="password">
                             </div>
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Dirección</h1>
-                                <input type="text" v-model="address" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su nombre de usuario">
+                                <label for="inputName">Dirección</label>
+                                <input type="text" class="form-control" id="address" v-model="address">
                             </div>
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Numero de dirección</h1>
-                                <input type="text" v-model="addressnumber" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de direccion">
-                            </div>
+                                <label for="inputName">Numero de dirección</label>
+                                <input type="text" class="form-control" id="addressnumber" v-model="addressnumber">    
                             <div class="form-group col-md-3">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Numero de telefono</h1>
-                                <input type="text" v-model="movil" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-black hover:border-black-700 focus:border-black-700" placeholder="Ingrese su numero de telefono">
-                            </div>
+                                <label for="inputName">Numero de telefono</label>
+                                <input type="text" class="form-control" id="movil" v-model="movil">
                             <input type="checkbox" v-model="esadmin" checked data-toggle="toggle" data-on="Admin" data-off="Usuario comun" data-onstyle="success" data-offstyle="danger">
                             <button type="submit"  class="bg-green p-5 text-black">
-                                Sign Up <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
+                                Registrar <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
                             </button>
                         </form>
                     </div>

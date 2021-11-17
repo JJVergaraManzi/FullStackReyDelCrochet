@@ -9,7 +9,7 @@
             <div class="position-absolute top-0 start-50 translate-middle-x"><h1 class="bg secundary"> <!--cambiar el color lugar y forma del inicio -->
             El Rey Del Crochet 
             </h1>
-            <h2>"Bienvenido Administrador:" {{name}}</h2></div>
+            <h2>Bienvenido Administrador: {{name}}</h2></div>
             </div>         
             </v-col>
             <div>

@@ -5,11 +5,11 @@
       mode="payment"
       :pk="publishableKey"
       :line-items="lineItems"
-      :success-url="successURL"
-      :cancel-url="cancelURL"
+      :success-url="http://localhost:8080/PagoExito"
+      :cancel-url="http://localhost:8080/PagoFracaso"
       @loading="v => loading = v"
     />
-    <button @click="submit">Pay now!</button>
+    <button @click="submit">Pague!</button>
   </div>
 </template>
 

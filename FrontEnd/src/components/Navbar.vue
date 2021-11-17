@@ -19,33 +19,27 @@
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
 
-      <template v-if="accessLevel==true">
-        <v-list-item  router to="/Admin">
+        <v-list-item v-if="accessLevel==true" router to="/Admin">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
           </v-list-item-icon>
           <v-list-item-title>Ingreso de productos</v-list-item-title>
         </v-list-item>
 
-        <v-list-item  href="#" v-on:click="logout" >
+        <v-list-item v-if="accessLevel==true" href="#" v-on:click="logout" >
           <v-list-item-icon>
             <i class="fa fa-window-close" aria-hidden="true"></i>
           </v-list-item-icon>
           <v-list-item-title>salir del administrador</v-list-item-title>
         </v-list-item>
         
-      </template>
-
-      <template v-if="accessLevel!=null">
-        
-        <v-list-item  href="#" v-on:click="logout" >
+        <v-list-item v-if="accessLevel!=null" href="#" v-on:click="logout" >
           <v-list-item-icon>
             <i class="fa fa-window-close" aria-hidden="true"></i>
           </v-list-item-icon>
           <v-list-item-title>Salir sesión de usuario</v-list-item-title>
         </v-list-item>
         
-      </template>
 
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
@@ -176,7 +170,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-        this.accessLevel = data.user.esadmin
+        this.accessLevel = data.esadmin
         });
   },  
   methods: {
