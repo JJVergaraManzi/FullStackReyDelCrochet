@@ -18,7 +18,7 @@ import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 import Admin from '../views/Admin.vue'
-import Pagos from '../views/Pagos.vue'
+//import Pagos from '../views/Pagos.vue'
 //import Homedos from '../views/Homedos.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
@@ -130,11 +130,11 @@ const routes = [
     name: 'Forgottenpassword',
     component: Forgottenpassword
   },
-  {
+  /*{
     path: '/Pagos',
     name: 'Pagos',
     component: Pagos
-  },
+  },*/
   {
     path: '/Register',
     name: 'Register',

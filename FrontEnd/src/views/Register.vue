@@ -1,60 +1,101 @@
 <template>
         <div>
             <div class="flex items-center justify-center h-screen">
-                <div class="hidden sm:block w-1/2 bg-cover h-screen" style='background: url(newFood.png)'>
+                <div class="hidden sm:block w-1/2 bg-cover h-screen" >
                     <div class="bg-blue-800 w-full h-screen bg-opacity-20">
                     </div>
                 </div>
                 <div class="sm:w-1/2">
                     <div class="p-5 w-4/5 mx-auto text-left font-raleway">
-                        <div class="text-left mb-7">
+                        <v-card width="120px" class="mx-3 m-5 p-3 "> 
                             <router-link to="/">
-                                <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> HOME
+                                <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
                             </router-link> 
-                        </div>
-                        <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-7">
-                            Registro
+                        </v-card>
+                  <v-card width="800px" class="mx-3 m-5 p-3 " 
+                    >
+                         <h5 class="font-weight-regular"  >
+                            Ingrese a 
+                        </h5>
+                        <h1  class="font-italic">
+                            El Rey del Crochet
                         </h1>
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
-                        <form @submit="register">
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Nombre</h1>
-                                <input type="text" v-model="name" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Nombre">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Email</h1>
-                                <input type="email" v-model="email" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su mail">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Contraseña</h1>
-                                <input type="password" v-model="password" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Contraseña">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Nombre de usuario</h1>
-                                <input type="text" v-model="username" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Nombre de usuario">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Dirección</h1>
-                                <input type="text" v-model="address" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Dirección">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Numero de dirección</h1>
-                                <input type="text" v-model="addressNumber" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Numero de dirección">
-                            </div>
-                            <div class="my-4">
-                                <h1 class="text-left font-bold mb-2 font-montserrat">Telefono</h1>
-                                <input type="text" v-model="movil" class="text-sm outline-none pb-2 w-4/5 bg-transparent border-b hover:border-blue-700 focus:border-blue-700" placeholder="Ingrese su Telefono">
-                            </div>
-                            <input type="checkbox" v-model="esadmin" checked data-toggle="toggle" data-on="Admin" data-off="Usuario comun" data-onstyle="success" data-offstyle="danger">
-                            <button type="submit" :disabled="name.length < 6 || password.length < 6 || username.length < 3" class="bg-green-400 p-5 text-white">
-                                Sign Up <font-awesome-icon class="ml-3" :icon="['fas', 'arrow-right']" /> 
-                            </button>
-                        </form>
+                             <v-text-field
+                               v-model="name"
+                               :rules="nameRules"
+                                label="Nombre"
+                                required
+                            ></v-text-field>
+                             <v-text-field
+                                v-model="username"
+                                :rules="userNameRules"
+                                label="Nombre de Usuario"
+                                required
+                            ></v-text-field>
+                             <v-text-field
+                                v-model="email"
+                                :rules="emailRules"
+                                label="Correo Electrónico"
+                                required
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="password"
+                                :rules="rulesPassword"
+                                label="Contraseña"
+                            ><input type="hidden"></v-text-field>
+                            <v-text-field
+                                v-model="address"
+                                :rules="rulesAddress"
+                                label="Dirección"
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="addressnumber"
+                                :rules="rulesAddressnumber"
+                                label="Numero de dirección"
+                            ></v-text-field>
+                            <v-text-field
+                                v-model="movil"
+                                hide-details
+                                single-line
+                                :rules="rulesMovil"
+                                type="number"
+                                label="Numero de telefono"
+                            ></v-text-field>
+                        <div>
+                        <input 
+                            type="checkbox" 
+                            label="¿Es admin?"
+                            v-model="esadmin" 
+                            checked 
+                            data-toggle="toggle" 
+                            data-on="true" 
+                            data-off="false" 
+                            data-onstyle="success" 
+                            data-offstyle="danger">
+                        </div>
+                        <p>¿es administrador?</p>
+                         <v-btn 
+                                class="mx-auto"
+                                rounded
+                                color="blue lighten-3 "
+                                width="200px"
+                                @click="login">
+                                Registrese
+                        <v-icon right> fas fa-arrow-right </v-icon>
+                        </v-btn>
+                            <p class="my-2">
+                                <router-link to="/Login" >¿Tiene cuenta? Ingrese!</router-link>
+                            </p>
+                    </v-card>
                     </div>
                 </div>
             </div>
         </div>
-    </template>
+</template>
+
+                            
+                          
 <script>
     export default {
         name: 'Register',
@@ -69,7 +110,27 @@
                 movil: '',
                 esadmin: '',
                 error: false,
-                errorMsg: `Ha ocurrido un error, ingrese de nuevo los datos`
+                errorMsg: `Ha ocurrido un error, ingrese de nuevo los datos`,
+                emailRules:[
+                        value => !!value || 'Por favor, ingresar un correo.',
+                        value => (value && value.length >=3) || 'El correo requiere al menos 3 caracteres.'
+                     ],
+                rulesPassword:[
+                        value => !!value || 'Por favor, ingresar contraseña.',
+                        value => (value && value.length >=6) || 'La contraseña requiere al menos 6 caracteres.'
+                    ],
+                rulesAddress:[
+                        value => !!value || 'Por favor, ingresar la dirección.',
+                        value => (value && value.length >=6) || 'La dirección requiere al menos 6 caracteres.'
+                    ],
+                rulesAddressnumber:[
+                        value => !!value || 'Por favor, ingresar numero de dirección.',
+                        value => (value && value.length >=2) || 'numero de dirección requiere al menos 2 caracteres.'
+                    ],
+                rulesMovil:[
+                        value => !!value || 'Por favor, ingresar numero de dirección.',
+                        value => (value && value.length <=0 && value.length >=8) || 'numero de dirección requiere al menos 2 caracteres.'
+                    ],
             }
         },
         methods: {

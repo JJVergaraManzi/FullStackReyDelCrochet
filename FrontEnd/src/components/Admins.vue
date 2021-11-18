@@ -1,7 +1,8 @@
 <template>
   <form>
-  <div class="form-row">
-    <h1>Ingrese su producto</h1>
+  <v-card width="800px" class="mx-3 m-5 p-3 ">
+    <div class="form-row">
+      <h1>Ingrese su producto</h1>
     <div class="form-group col-md-3">
       <label for="inputName">nombre</label>
       <input type="text" class="form-control" id="nombre">
@@ -47,6 +48,7 @@
     </select>
   </div>
   <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
+  </v-card>
 </form>
 </template>
 
