@@ -1,16 +1,18 @@
 <template>
     
     <v-navigation-drawer 
-    permanent floating dark app src="../assets/fondolana.jpg" >
+    permanent floating dark app src="https://blog.tejeme.com/wp-content/uploads/2019/10/orgu.jpg" >
     <v-list>
+      <a class="navbar-brand" href="#">
+      <img src="../assets/logo.jpg" alt="" height="200">
+    </a> 
         <v-list-item router to="/">
+        
           <v-list-item-icon>
             <v-icon>fas fa-home</v-icon>
           </v-list-item-icon>
-
           <v-list-item-title>Inicio</v-list-item-title>
         </v-list-item>
-
         <v-list-item router to="/Login">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
@@ -57,6 +59,7 @@
               <template v-slot:activator>
                 <v-list-item-title>Tienda</v-list-item-title>
               </template>
+              
 
                 <v-list-item router to="/agujas">
                   <v-list-item-icon>
@@ -136,7 +139,7 @@
                     <v-icon dark>
                       fa fa-shopping-cart
                     </v-icon>
-                  </v-btn>                
+                  </v-btn>               
                 </v-fab-transition>
             </v-card>
           </v-col>

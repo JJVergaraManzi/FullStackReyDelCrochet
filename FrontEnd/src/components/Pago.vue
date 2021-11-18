@@ -10,7 +10,7 @@
         />
       </div>
     </div>
-  </section>
+ 
   <div class="crochet-container with-title is-centered">
     <form @submit.prevent="handleSubmit">
       <fieldset :class="{ dis: loading }" class="fields">
@@ -87,6 +87,7 @@
       Comprar
     </button>
   </div>
+   </section>
 </template>
 
 <script>
