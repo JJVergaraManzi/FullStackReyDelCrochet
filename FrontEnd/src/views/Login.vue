@@ -50,7 +50,9 @@
                                 Iniciar Sesión
                         <v-icon right> fas fa-arrow-right </v-icon>
                         </v-btn>
-   
+                             <p class="my-2">
+                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
+                            </p>                       
                     </v-card>
                     </v-col>
                     <v-col
