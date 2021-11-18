@@ -130,11 +130,11 @@ const routes = [
     name: 'Forgottenpassword',
     component: Forgottenpassword
   },
-  /*{
-    path: '/Pagos',
-    name: 'Pagos',
-    component: Pagos
-  },*/
+ // {
+ //   path: '/Pagos',
+ //   name: 'Pagos',
+ //   component: Pagos
+ // },
   {
     path: '/Register',
     name: 'Register',
