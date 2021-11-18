@@ -3,7 +3,7 @@
     <v-navigation-drawer 
     permanent floating dark app src="https://blog.tejeme.com/wp-content/uploads/2019/10/orgu.jpg" >
     <v-list>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/Home">
       <img src="../assets/logo.jpg" alt="" height="200">
     </a> 
         <v-list-item router to="/">
