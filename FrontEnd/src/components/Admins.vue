@@ -22,7 +22,12 @@
   </div>
   <div class="form-group">
     <label for="InputImage">Imagen</label>
-    <input type="file"  class="form-control-file" id="img">
+    <input 
+    type="file"  
+    class="form-control-file"
+    accept="image/"
+    @change="uploadImage($event)"
+    id="img">
   </div>
   <div class="form-group">
     <div class="form-group col-md-3">
@@ -67,10 +72,20 @@
                     productoID:'',
                     categoria:'',
                     error: false,
+                    imagePreview: null,
                     errorMsg: `Uno de los campos esta incompleto, intentelo de nuevo.`
                 }
             },
             methods: {
+              uploadImage(e){
+                const image = e.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(image);
+                reader.onload= e=>{
+                  this.previewImage = e.target.result;
+                  console.log(this.imagePreview);
+                };
+              },
                 async upload(e) {
                     try {
                         e.preventDefault()
