@@ -12,8 +12,14 @@
                                 <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
                             </router-link> 
                         </div>
-                  <v-card width="800px" class="mx-3 m-5 p-3 " 
+                <v-row>
+                    <v-col
+                    cols="12"
+                      sm="6"
+                      md="4">
+                  <v-card width="700px" class="mx-3 m-5 p-3 " 
                     >
+                    
                          <h5 class="font-weight-regular"  >
                             Ingrese a 
                         </h5>
@@ -44,19 +50,42 @@
                                 Iniciar Sesión
                         <v-icon right> fas fa-arrow-right </v-icon>
                         </v-btn>
-                            <p class="my-2">
-                                <router-link to="/Register" >¿No tiene cuenta? ¡Registrese!</router-link>
-                            </p>
+   
                     </v-card>
-
-                
+                    </v-col>
+                    <v-col
+                    cols="12"
+                      sm="6"
+                     md="4"
+                     >
+                    <v-card
+                    width="700px" class="mx-15 m-5 p-3">
+                         <h3 class="font-weight-regular"  >
+                            ¿Aún no tiene cuenta en nuestra tienda?
+                        </h3>
+                        <h5 class="font-weight-regular"  >
+                            Registrate, es fácil y rápido.
+                        </h5>
+                             <v-btn 
+                                class="mx-auto"
+                                rounded
+                                color="blue lighten-3 "
+                                width="200px"
+                                router to="/Register"
+                                >
+                                Registrarse
+                        </v-btn>
+                        
+                    </v-card>
+                    </v-col>
+                </v-row>
 
                                 
                             <!--- p class="my-2">
                                 <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
                             </p--->
 
-                            
+                        
                     
                     </div>
                 </div>
