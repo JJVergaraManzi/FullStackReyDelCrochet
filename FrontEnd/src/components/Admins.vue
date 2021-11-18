@@ -124,7 +124,7 @@
                 async upload(e) {
                     try {
                         e.preventDefault()
-                            await this.axios.post(`http://localhost:3001/products`, {
+                            await this.axios.post(`http://localhost:3001/auth/local/products`, {
                             nombre: this.nombre,
                             stock: this.stock,
                             price: this.price,
