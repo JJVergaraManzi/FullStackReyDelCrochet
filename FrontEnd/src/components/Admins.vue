@@ -5,20 +5,39 @@
       <h1>Ingrese su producto</h1>
     <div class="form-group col-md-3">
       <label for="inputName">nombre</label>
-      <input type="text" class="form-control" id="nombre">
+      <input 
+      type="text" 
+      class="form-control" 
+      id="nombre">
     </div>
     <div class="form-group col-md-3">
       <label for="inputStock">Cantidad</label>
-      <input type="number" v-model="stock" class="form-control" id="stock">
+      <input 
+      type="number" 
+      v-model="stock"
+      :rules="emailRules" 
+      class="form-control" 
+      id="stock">
     </div>
   </div>
   <div class="form-group col-md-3">
     <label for="inputPrice">Precio</label>
-    <input type="number" v-model="price" class="form-control" id="price" >
+    <input 
+    type="number" 
+    v-model="price"
+    :rules="emailRules" 
+    class="form-control" 
+    id="price" >
   </div>
   <div class="form-group col-md-3">
     <label for="inputDate">Fecha de ingreso</label>
-    <input type="date" v-model="creationDate" class="form-control" id="creationDate" placeholder="1234 Main St">
+    <input 
+    type="date" 
+    v-model="creationDate"
+    :rules="emailRules" 
+    class="form-control" 
+    id="creationDate" 
+    placeholder="Ingrese su  fecha">
   </div>
   <div class="form-group">
     <label for="InputImage">Imagen</label>
@@ -32,17 +51,30 @@
   <div class="form-group">
     <div class="form-group col-md-3">
       <label for="inputDescription">Descripción</label>
-      <input type="text" v-model="description" class="form-control" id="description" rows="3">
+      <input 
+      type="text" 
+      v-model="description"
+      :rules="emailRules" 
+      class="form-control" 
+      id="description" 
+      rows="3">
     </div>
     <div class="form-group col-md-3">
       <label for="inputIdProduct">Id del producto</label>
-      <input type="text" v-model="productoID" class="form-control" id="productoID">
+      <input 
+      type="text" 
+      v-model="productoID"
+      :rules="emailRules" 
+      class="form-control" 
+      id="productoID">
     </div>
   </div>
   
   <div class="form-group col-md-4">
     <label for="inputCategory">Categoria</label>
-    <select  class="form-control" v-model="categoria" id="categoria" placeholder="Ingrese la categoria">
+    <select  class="form-control" v-model="categoria"
+    :rules="emailRules" id="categoria" 
+    placeholder="Ingrese la categoria">
       <option>Accesorios</option>
       <option>Crochet</option>
       <option>Lanas</option>
@@ -73,6 +105,9 @@
                     categoria:'',
                     error: false,
                     imagePreview: null,
+                    Rules:[
+                        value => !!value || 'Por favor, ingrese los datos.'
+                     ],
                     errorMsg: `Uno de los campos esta incompleto, intentelo de nuevo.`
                 }
             },
