@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-    </template>
+</template>
 <script>
 export default {
     name: 'ForgotPassword',     
@@ -60,8 +60,7 @@ methods: {
             this.done = false;
             this.error = false;
             this.axios.post(`http://localhost:1337/auth/forgot-password`, {
-                email: this.email,
-                console,log(email),
+                email: this.email
             })
             .then(() => {
                 this.done = true

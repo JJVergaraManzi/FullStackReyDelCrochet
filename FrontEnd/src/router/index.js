@@ -4,6 +4,7 @@ import Contacto from '../views/Contacto.vue'
 import Tienda from '../views/Tienda.vue'
 import Register from '../views/Register.vue'
 import Forgottenpassword from '../views/Forgottenpassword.vue'
+import resetpassword from '../views/resetpassword.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
@@ -56,7 +57,7 @@ const routes = [
     component: Admin
   }, 
   {
-    path: '/HomeAdmin/:id',
+    path: '/HomeAdmin',
     name: 'HomeAdmin',
     component: HomeAdmin
   },
@@ -129,6 +130,11 @@ const routes = [
     path: '/forgottenpassword',
     name: 'Forgottenpassword',
     component: Forgottenpassword
+  },
+  {
+    path: '/resetpassword',
+    name: 'resetpassword',
+    component: resetpassword
   },
  // {
  //   path: '/Pagos',
