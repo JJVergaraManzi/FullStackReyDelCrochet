@@ -104,7 +104,7 @@
                 return {
                     email: '',
                     password: '',
-                    accessLevel: null,
+                    accesLevel: null,
                     error: false,
                     emailRules:[
                         value => !!value || 'Por favor, ingresar un correo.',
@@ -129,9 +129,8 @@
                         const { jwt, user } = res.data
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
-                        this.accessLevel = this.user.esadmin
-                        console.log("El admin es: ", this.accessLevel)
-                        this.$router.push('/HomeAdmin/:id')
+                        //window.localStorage.setItem('bookmarks', JSON.stringify(user.bookmarks))
+                        this.$router.push('/HomeAdmin')
                     } catch(error) {
                         this.error = true
                         this.password = ''

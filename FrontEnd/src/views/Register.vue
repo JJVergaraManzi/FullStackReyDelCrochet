@@ -12,7 +12,7 @@
                                 <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
                             </router-link> 
                         </v-card>
-                  <v-card width="800px" class="mx-3 m-5 p-3 " 
+                        <v-card width="800px" class="mx-3 m-5 p-3 " 
                     >
                          <h5 class="font-weight-regular"  >
                             Ingrese a 
@@ -80,7 +80,7 @@
                                 rounded
                                 color="blue lighten-3 "
                                 width="200px"
-                                @click="login">
+                                @click="register">
                                 Registrese
                         <v-icon right> fas fa-arrow-right </v-icon>
                         </v-btn>
@@ -108,7 +108,7 @@
                 address: '',
                 addressNumber: '',
                 movil: '',
-                esadmin: '',
+                esadmin: false,
                 error: false,
                 errorMsg: `Ha ocurrido un error, ingrese de nuevo los datos`,
                 emailRules:[
@@ -137,7 +137,7 @@
             async register(e) {
                 try {
                     e.preventDefault()
-                        await this.axios.post(`http://localhost:3001/auth/local/register`, {
+                        await this.axios.post(`http://localhost:3001/users`, {
                         name: this.name,
                         password: this.password,
                         email: this.email,
