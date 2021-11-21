@@ -9,7 +9,7 @@
                 <div class="p-5 w-4/5 mx-auto text-left font-raleway">
                     <v-card width="700px" class="mx-3 m-5 p-3 "> 
                         <router-link to="/login">
-                            <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Login
+                            <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Ingreso de usuario
                         </router-link> 
                     </v-card>
                         
@@ -57,7 +57,7 @@
             methods: {
                 async resetPassword(e) {
                     e.preventDefault()
-                    this.axios.post(`http://localhost:1337/auth/reset-password`, {
+                    this.axios.post(`http://localhost:3001/auth/reset-password`, {
                         code: this.$route.query.code,
                         password: this.password,
                         passwordConfirmation: this.confirmPassword
