@@ -10,16 +10,20 @@
             El Rey Del Crochet 
             </h1>
             <h2>Bienvenido Administrador: {{name}}</h2></div>
+                <v-list-item v-if="accessLevel==true" router to="/Admin">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                <v-list-item-title>Ingreso de productos</v-list-item-title>
+              </v-list-item>
+              <v-list-item  href="#" v-on:click="logout" >
+                <v-list-item-icon>
+                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                </v-list-item-icon>
+                <v-list-item-title>Salir sesión</v-list-item-title>
+            </v-list-item>
             </div>         
-            </v-col>
-            <div>
-                <v-list-item  href="#" v-on:click="logout" >
-                     <v-list-item-icon>
-                        <i class="fa fa-window-close" aria-hidden="true"></i>
-                     </v-list-item-icon>
-                    <v-list-item-title>Salir sesión</v-list-item-title>
-                </v-list-item>    
-            </div> 
+            </v-col> 
         
   </body> 
         
