@@ -38,11 +38,11 @@
                                :rules="rulesPassword"
                                 label="Contraseña"
 
-                            >
+                            >/v-text-field>
                             <input type="hidden"></v-text-field>
                         
                          <v-btn 
-                                class="mx-auto"
+                                
                                 rounded
                                 color="blue lighten-3 "
                                 width="200px"
