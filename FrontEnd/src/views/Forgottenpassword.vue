@@ -59,7 +59,7 @@ methods: {
         e.preventDefault()
             this.done = false;
             this.error = false;
-            this.axios.post(`http:/localhost:3001/admin/plugins/users-permissions/auth/reset-password`, {
+            this.axios.post(`http:/localhost:1337/admin/plugins/users-permissions/auth/reset-password`, {
                 email: this.email
             })
             .then(() => {
