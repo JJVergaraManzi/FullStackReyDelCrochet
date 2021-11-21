@@ -1,8 +1,6 @@
 <template>
   <body>     
-    
-      <img class="bg-img fluid" src="../assets/lanafondo3.jpg">  
-          <v-col
+        <v-col
             class="text-center"
             cols="12">
             <div class="title">
@@ -26,9 +24,7 @@
                     <v-list-item-title>Salir sesión</v-list-item-title>
                 </v-list-item>    
             </div> 
-        
-  </body> 
-        
+  </body>     
 </template>
   
 <script>
