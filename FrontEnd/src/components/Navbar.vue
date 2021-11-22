@@ -1,16 +1,18 @@
 <template>
     
     <v-navigation-drawer 
-    permanent floating dark app src="../assets/fondolana.jpg" >
+    permanent floating dark app src="https://blog.tejeme.com/wp-content/uploads/2019/10/orgu.jpg" >
     <v-list>
+      <a class="navbar-brand" href="/">
+      <img src="../assets/logo.jpg" alt="" height="200">
+    </a> 
         <v-list-item router to="/">
+        
           <v-list-item-icon>
             <v-icon>fas fa-home</v-icon>
           </v-list-item-icon>
-
           <v-list-item-title>Inicio</v-list-item-title>
         </v-list-item>
-
         <v-list-item router to="/Login">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
@@ -18,35 +20,6 @@
 
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
         </v-list-item>
-
-      <template v-if="accessLevel==true">
-        <v-list-item  router to="/Admin">
-          <v-list-item-icon>
-            <i class="far fa-address-card"></i>
-          </v-list-item-icon>
-          <v-list-item-title>Ingreso de productos</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item  href="#" v-on:click="logout" >
-          <v-list-item-icon>
-            <i class="fa fa-window-close" aria-hidden="true"></i>
-          </v-list-item-icon>
-          <v-list-item-title>salir del administrador</v-list-item-title>
-        </v-list-item>
-        
-      </template>
-
-      <template v-if="accessLevel!=null">
-        
-        <v-list-item  href="#" v-on:click="logout" >
-          <v-list-item-icon>
-            <i class="fa fa-window-close" aria-hidden="true"></i>
-          </v-list-item-icon>
-          <v-list-item-title>Salir sesión de usuario</v-list-item-title>
-        </v-list-item>
-        
-      </template>
-
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
             <v-icon>fas fa-phone-alt</v-icon>
@@ -63,6 +36,7 @@
               <template v-slot:activator>
                 <v-list-item-title>Tienda</v-list-item-title>
               </template>
+              
 
                 <v-list-item router to="/agujas">
                   <v-list-item-icon>
@@ -142,7 +116,7 @@
                     <v-icon dark>
                       fa fa-shopping-cart
                     </v-icon>
-                  </v-btn>                
+                  </v-btn>               
                 </v-fab-transition>
             </v-card>
           </v-col>
@@ -176,7 +150,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-        this.accessLevel = data.user.esadmin
+        this.accessLevel = data.esadmin
         });
   },  
   methods: {

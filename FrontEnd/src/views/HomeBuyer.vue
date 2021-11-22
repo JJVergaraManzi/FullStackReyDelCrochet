@@ -1,16 +1,16 @@
 <template>
 
     <v-container >
-        <Admin/>
+        <HomeBuyers/>
     </v-container>
     
 </template>
 
 <script>
-import Admin from '../components/Pago.vue'
+import HomeBuyers from '../components/HomeBuyers.vue'
 export default{
     components: {
-        Admin
+        HomeBuyers
   }
 }
 </script>

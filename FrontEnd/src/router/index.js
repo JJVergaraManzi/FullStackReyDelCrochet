@@ -4,6 +4,7 @@ import Contacto from '../views/Contacto.vue'
 import Tienda from '../views/Tienda.vue'
 import Register from '../views/Register.vue'
 import Forgottenpassword from '../views/Forgottenpassword.vue'
+import resetpassword from '../views/resetpassword.vue'
 import Home from '../views/Home.vue'
 import Carritojaja from '../views/Carritojaja.vue'
 import VueAxios from 'vue-axios';
@@ -18,12 +19,12 @@ import Tijeras from '../views/Tijeras.vue'
 import Trapillo from '../views/Trapillo.vue'
 import Login from '../views/Login.vue'
 import Admin from '../views/Admin.vue'
+//import Pagos from '../views/Pagos.vue'
 //import Homedos from '../views/Homedos.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
 import AgregarProd from '../views/AgregarProd.vue'
-
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
@@ -54,7 +55,8 @@ const routes = [
     path: '/Admin',
     name: 'Admin',
     component: Admin
-  }, {
+  }, 
+  {
     path: '/HomeAdmin',
     name: 'HomeAdmin',
     component: HomeAdmin
@@ -118,19 +120,34 @@ const routes = [
     path: '/trapillo',
     name: 'trapillo',
     component: Trapillo
-  },{
+  },
+  {
     path: '/Login',
     name: 'Login',
     component: Login
-  },{
+  },
+  {
     path: '/forgottenpassword',
     name: 'Forgottenpassword',
     component: Forgottenpassword
-  },{
-    path: '/register',
+  },
+  {
+    path: '/resetpassword',
+    name: 'resetpassword',
+    component: resetpassword
+  },
+ // {
+ //   path: '/Pagos',
+ //   name: 'Pagos',
+ //   component: Pagos
+ // },
+  {
+    path: '/Register',
     name: 'Register',
     component: Register
-  }
+  },
+
+
   
 ]
 

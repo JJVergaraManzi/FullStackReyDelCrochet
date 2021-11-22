@@ -3,7 +3,7 @@
     height="900" 
     dark
     position: absolute
-    src="../assets/lanafondo.jpg">
+    src="">
       <v-row 
       justify="center"          
       align="center">
@@ -44,3 +44,4 @@
       </v-row>
   </v-parallax>
 </template>
+
