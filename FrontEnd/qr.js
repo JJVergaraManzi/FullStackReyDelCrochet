@@ -1,7 +1,7 @@
 const fs = require("fs");
 const qrcode = require("qrcode");
 
-const urlCv = "https://drive.google.com/open?id=1iGHAD2BrYAda-IpPgz8IQbE5aByaD4PI";
+const urlCv = "http://localhost:8080/tienda";
 
 const run = async() => {
   const QR = await qrcode.toDataURL(urlCv)
