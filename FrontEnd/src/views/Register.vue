@@ -23,13 +23,13 @@
                         <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
                              <v-text-field
                                v-model="name"
-                               :rules="nameRules"
+                               :rules="namesRules"
                                 label="Nombre"
                                 required
                             ></v-text-field>
                              <v-text-field
                                 v-model="username"
-                                :rules="userNameRules"
+                                :rules="usernameRules"
                                 label="Nombre de Usuario"
                                 required
                             ></v-text-field>
@@ -97,20 +97,29 @@
                             
                           
 <script>
+    class Task{
+        constructor(name,username,password,address,addressNumber,movil)
+        {
+            this.name=name;
+            this.username=username;
+            this.password=password;
+            this.address=address;
+            this.addressNumber=addressNumber;
+            this.movil=movil
+        }
+    }
     export default {
         name: 'Register',
         data() {
             return {
-                name: '',
-                email: '',
-                password: '',
-                username: '',
-                address: '',
-                addressNumber: '',
-                movil: '',
-                esadmin: false,
-                error: false,
-                errorMsg: `Ha ocurrido un error, ingrese de nuevo los datos`,
+                namesRules:[
+                    value => !!value ||'Por favor, ingrese un nombre'
+
+                ],
+                usernameRules:[
+                    value => !!value ||'Por favor, ingrese un nombre de usuario'
+
+                ],
                 emailRules:[
                         value => !!value || 'Por favor, ingresar un correo.',
                         value => (value && value.length >=3) || 'El correo requiere al menos 3 caracteres.'
@@ -128,10 +137,56 @@
                         value => (value && value.length >=2) || 'numero de dirección requiere al menos 2 caracteres.'
                     ],
                 rulesMovil:[
-                        value => !!value || 'Por favor, ingresar numero de dirección.',
-                        value => (value && value.length <=0 && value.length >=8) || 'numero de dirección requiere al menos 2 caracteres.'
+                        value => !!value || 'Por favor, ingresar numero de telefono.',
+                        value => (value && value.length <=0 && value.length >=8) || 'El número de telefono tiene que ser de 9 digitos.'
                     ],
+                task: new Task(),
+                tasks: [],
+                name: '',
+                email: '',
+                password: '',
+                username: '',
+                address: '',
+                addressNumber: '',
+                movil: '',
+                esadmin: false,
+                error: false,
+                errorMsg: `Ha ocurrido un error, ingrese de nuevo los datos`,
+                
             }
+        },
+        computed: {
+            userLogged() {
+            return this.getUserLogged();
+            },
+        },
+        async created() {
+            if (typeof this.userLogged === 'undefined') {
+                this.$router.push('/login');
+            }
+            this.getTasks();
+        }
+        ,
+        async mounted(){
+            await fetch(`http://localhost:3001/users`, {
+                method: 'GET',
+                headers: {
+                    'Accept' : 'application/json',
+                    'Content-type':'application/json',
+                    token : this.getUserLogged()
+                    }
+            })
+            .then(res => res.json())
+            .then(data => {
+            this.esadmin = data.user.admin
+            if(this.accessLevel != true){
+                this.$router.push('/login');
+                console.log("error")
+            }
+            this.name = data.user.name;
+            this.username = data.user.username
+            
+            });
         },
         methods: {
             async register(e) {
@@ -147,12 +202,14 @@
                         movil: this.movil,
                         esadmin: this.esadmin
                     })
-                    this.$router.push('register')
+                    this.$router.push('/HomeAdmin')
                 } catch(e) {
                     this.error = true
                     this.email = ''
                 } 
             }
+            
+            
         }
     }
 </script>
