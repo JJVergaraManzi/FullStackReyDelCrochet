@@ -28,11 +28,11 @@
                     <div>
                         <div class=" col row justify-content-center"> <strong> Precio: ${{producto.precio}}  </strong></div>
                         <button class="btn" v-if="qtyCart===0" @click="addToCart"><a href="#" class="p-1 mb-2 bg-dark text-white aling-items-center">Agregar al carro</a> </button>
-                        <div class="botones" v-else>
+                        <div class="botones justify-end" v-else>
                             <div v-if="producto.stock!==qtyCart">
-                                <button class="btns" @click="inc"><p class="p-1 mb-2 bg-success text-white aling-items-center">+</p></button>
+                                <button class="botones btns" @click="inc"><p class="p-2 mb-3 bg-success text-white aling-items-center">+</p></button>
                             </div>
-                                <button class="btns" @click="dec"><p class="p-1 mb-2 bg-danger text-white aling-items-center">-</p></button>
+                                <button class="botones btns" @click="dec"><p class="p-2 mb-3 bg-danger text-white aling-items-center">-</p></button>
                             
                         </div>
 
