@@ -13,6 +13,7 @@ export default {
                 nombre :producto.nombre,
                 precio:producto.precio,
                 img: producto.img,
+                stock: producto.stock,
                 qty:1,
             })
         }

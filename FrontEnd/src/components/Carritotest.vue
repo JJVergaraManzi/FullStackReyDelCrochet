@@ -17,6 +17,8 @@
                 </div>
                 <div class="precio"> precio {{item.qty * item.precio}}</div>
 
+
+
             </div>
         </div> 
             <div class="total"> total {{total}}</div>
@@ -41,26 +43,26 @@ import _ from 'lodash'
                 })
             },
             qtyCart(){
-            var busqueda = _.find(this.shared.cart, ['id',this.producto.id])
-            if(typeof busqueda == 'object'){
-               return busqueda.qty
-            }else{
-              return 0;
+                var busqueda = _.find(this.items.cart, ['id',this.item.id])
+                if(typeof busqueda == 'object'){
+                    return busqueda.qty
+                }else{
+                    return 0;
+                }
             }
-        }
         },
         methods:{
             test (value) {
                 return _.isEmpty(value)
             },
             addToCart(){
-                logica.add(this.producto)
+                logica.add(this.items)
             },
             inc(){
-                logica.inc(this.producto)
+                logica.inc(this.items)
             },
             dec(){
-                logica.dec(this.producto)
+                logica.dec(this.items)
             }
         }
     }
