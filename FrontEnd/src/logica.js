@@ -12,7 +12,7 @@ export default {
                 id:producto.id,
                 nombre :producto.nombre,
                 precio:producto.precio,
-                img:'producto.jpg',
+                img: producto.img,
                 qty:1,
             })
         }

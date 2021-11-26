@@ -7,8 +7,8 @@
             <div class="car_pro" v-for="item in items" :item="item" :key="item.id">
                 <div class="imgsd">
                     <img :src="`http://localhost:3001${item.img[0].url}`"
-                        class="img-thumbnail" 
-                        alt="" />
+                        class="img-thumbnail img-fluid" 
+                        alt="">
                 </div>
                 <div class="cuerpo">
                     <div class="nomc">{{item.nombre}} </div>
@@ -70,7 +70,7 @@ img {
     width:100%;
 }
 .imgsd {
-      width:15%;  
+      width:25%;  
 }
 .car_pro {
     display:flex;
