@@ -12,7 +12,7 @@ export default {
   },
   register(username,name,email,password,Address,AddressNumber,Movil) {
     const user = {username,name,email,password,Address,AddressNumber,Movil};
-    return axios.post(ENDPOINT_PATH + "/content-manager/collection-types/plugins::users-permissions.user", user);
+    return axios.post(ENDPOINT_PATH + "/auth/local/register", user);
   },
   login(email, password) {
     const user = { email, password };
