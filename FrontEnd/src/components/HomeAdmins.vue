@@ -10,7 +10,7 @@
       </div>
             <div class="menu">
               <v-card width="700px" class="mx-3 m-5 p-3 justify-center"> 
-                <v-list-item v-if="accessLevel==true" router to="/Admin">
+                <v-list-item v-if="acceso==true" router to="/Admin">
                   <v-list-item-icon>
                     <i class="far fa-address-card"></i>
                   </v-list-item-icon>
@@ -37,7 +37,7 @@
         data() {
             return {
                 name:'',
-                accessLevel: true
+                acceso: true
             }
         },
         computed: {
@@ -57,7 +57,7 @@
         .then(res => res.json())
         .then(data => {
         this.name = data.user.name
-        console.log("El usuario es admin si o no: ",data.user.esadmin)
+        console.log("El usuario es admin si o no: ",data.user.acceso)
         });
   },  
   methods: {
@@ -71,7 +71,7 @@
       localStorage.clear();
       this.deleteUserLogged()
       this.$router.push('/login');
-      this.accessLevel = null;
+      this.acceso = null;
     }
   }
 }

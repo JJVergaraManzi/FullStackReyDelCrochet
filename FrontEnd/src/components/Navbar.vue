@@ -7,7 +7,6 @@
       <img src="../assets/logo.jpg" alt="" height="200">
     </a> 
         <v-list-item router to="/">
-        
           <v-list-item-icon>
             <v-icon>fas fa-home</v-icon>
           </v-list-item-icon>
@@ -131,7 +130,7 @@ import Cookies from "js-cookie";
 export default {
     data() {
         return {
-            accessLevel: null,
+            acceso: null,
         }
     },
     computed: {
@@ -140,7 +139,7 @@ export default {
     },
     },
     async mounted(){
-        await fetch('http://localhost:3001/api/users/user', {
+        await fetch(`http://localhost:3001/users`, {
                     method: 'GET',
                     headers: {
                         'Accept' : 'application/json',
@@ -150,7 +149,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-        this.accessLevel = data.esadmin
+        this.acceso = data.acceso
         });
   },  
   methods: {
@@ -164,7 +163,7 @@ export default {
       localStorage.clear();
       this.deleteUserLogged()
       this.$router.push('/login');
-      this.accessLevel = null;
+      this.acceso = null;
     }
   }
 }

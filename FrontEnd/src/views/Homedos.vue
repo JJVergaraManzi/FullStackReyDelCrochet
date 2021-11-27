@@ -10,7 +10,7 @@
     </v-card-title>
     <v-card-text>
     <h2>your username is: {{ username }}</h2>
-    <h2>your role is: {{accessLevel}} </h2>
+    <h2>your role is: {{acceso}} </h2>
     <p>(1:user, 2:admin)</p>
     <p v-if="userLogged">Token: {{userLogged}}</p>
     </v-card-text>
@@ -26,7 +26,7 @@ export default {
       return {
         name: null,
         username: null,
-        accessLevel: null
+        acceso: null
         }
     },
     computed: {
@@ -55,7 +55,7 @@ export default {
       .then(data => {
       this.name = data.user.name;
       this.username = data.user.username
-      this.accessLevel = data.user.accessLevel
+      this.acceso = data.user.acceso
       });
     }
     ,

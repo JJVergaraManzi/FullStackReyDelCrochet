@@ -68,9 +68,13 @@
     "Movil": {
       "type": "biginteger"
     },
-    "esadmin": {
-      "type": "boolean",
-      "required": true
+    "acceso": {
+      "type": "integer",
+      "required": true,
+      "max": 2,
+      "min": 1,
+      "private": false,
+      "default": 1
     }
   }
 }

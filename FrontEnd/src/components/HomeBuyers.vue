@@ -101,7 +101,7 @@
         data() {
             return {
                 name:'',
-                accessLevel: true
+                acceso: true
             }
         },
         computed: {
@@ -121,7 +121,7 @@
         .then(res => res.json())
         .then(data => {
         this.name = data.user.name
-        console.log("El usuario es admin si o no: ",data.user.esadmin)
+        console.log("El usuario es admin si o no: ",data.user.acceso)
         });
   },  
   methods: {
@@ -135,7 +135,7 @@
       localStorage.clear();
       this.deleteUserLogged()
       this.$router.push('/login');
-      this.accessLevel = null;
+      this.acceso = null;
     }
   }
 }

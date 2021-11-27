@@ -4,7 +4,7 @@
     <div class="form-row">
       <h1>Ingrese su producto</h1>
     <div class="form-group col-md-3">
-      <label for="inputName">nombre</label>
+      <label for="inputName">Nombre</label>
       <input 
       type="text" 
       class="form-control" 
@@ -94,7 +94,7 @@
             name: 'admin',
             data() {
                 return {
-                    accessLevel:true,
+                    acceso:true,
                     nombre:'',
                     stock:'',
                     price:'',
@@ -124,7 +124,7 @@
                 async upload(e) {
                     try {
                         e.preventDefault()
-                            await this.axios.post(`http://localhost:3001/auth/local/products`, {
+                            await this.axios.post(`http://localhost:3001/products`, {
                             nombre: this.nombre,
                             stock: this.stock,
                             price: this.price,
@@ -135,7 +135,7 @@
                             categoria: this.categoria,
                             password: this.password,
                         })
-                        this.$router.push('admin')
+                        this.$router.push('/')
                     } catch(e) {
                         this.error = true
                     } 

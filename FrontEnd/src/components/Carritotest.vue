@@ -3,7 +3,7 @@
     <div>
         <v-card-title><h1></h1></v-card-title>
         <div class="todo">
-            <h1>Carrito de compra</h1>
+            <h1>Carrito de compras</h1>
             <div class="car_pro" v-for="item in items" :item="item" :key="item.id">
                 <div class="imgsd">
                     <img :src="`http://localhost:3001${item.img[0].url}`"
@@ -13,15 +13,15 @@
                 <div class="cuerpo">
                     <div class="nomc">{{item.nombre}} </div>
                     <br>
-                    <div class="cant"> cantidad {{item.qty}}</div>
+                    <div class="cant"> Cantidad {{item.qty}}</div>
                 </div>
-                <div class="precio"> precio {{item.qty * item.precio}}</div>
+                <div class="precio"> Precio {{item.qty * item.precio}}</div>
 
 
 
             </div>
         </div> 
-            <div class="total"> total {{total}}</div>
+            <div class="total"> Total {{total}}</div>
     </div>
 </template>
 <script>

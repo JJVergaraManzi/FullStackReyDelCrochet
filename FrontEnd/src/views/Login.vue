@@ -1,141 +1,116 @@
 <template>
-        <div>
-            <div class="flex items-center justify-center h-screen">
-                <div class="hidden sm:block w-1/2 bg-cover h-screen" >
-                    <div class="bg-blue-800 w-full h-screen bg-opacity-20">
-                    </div>
-                </div>
-                <div class="sm:w-1/2">
-                    <div class="p-5 w-4/5 mx-auto text-left font-raleway">
-                        <div class="text-left mb-10"> 
-                            <router-link to="/">
-                                <font-awesome-icon class="mr-5" :icon="['fas', 'arrow-left']" /> Inicio
-                            </router-link> 
-                        </div>
-                <v-row>
-                    <v-col
-                    cols="12"
-                      sm="6"
-                      md="4">
-                  <v-card width="700px" class="mx-3 m-5 p-3 " 
-                    >
-                    
-                         <h5 class="font-weight-regular"  >
-                            Ingrese a 
-                        </h5>
-                        <h1  class="font-italic">
-                            El Rey del Crochet
-                        </h1>
-                        <p v-show="error" class="text-sm text-red-500">{{ errorMsg }}</p>
-                             <v-text-field
-                               v-model="email"
-                               :rules="emailRules"
-                                label="Correo Electrónico"
-                                required
-                            ></v-text-field>
-                            <v-text-field
-                               v-model="password"
-                               :rules="rulesPassword"
-                                label="Contraseña"
-
-                            >/v-text-field>
-                            <input type="hidden"></v-text-field>
-                        
-                         <v-btn 
-                                
-                                rounded
-                                color="blue lighten-3 "
-                                width="200px"
-                                @click="login">
-                                Iniciar Sesión
-                        <v-icon right> fas fa-arrow-right </v-icon>
-                        </v-btn>
-                             <p class="my-2">
-                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
-                            </p>                       
-                    </v-card>
-                    </v-col>
-                    <v-col
-                    cols="12"
-                      sm="6"
-                     md="4"
-                     >
-                    <v-card
-                    width="700px" class="mx-15 m-5 p-3">
-                         <h3 class="font-weight-regular"  >
-                            ¿Aún no tiene cuenta en nuestra tienda?
-                        </h3>
-                        <h5 class="font-weight-regular"  >
-                            Registrate, es fácil y rápido.
-                        </h5>
-                             <v-btn 
-                                class="mx-auto"
-                                rounded
-                                color="blue lighten-3 "
-                                width="200px"
-                                router to="/Register"
-                                >
-                                Registrarse
-                        </v-btn>
-                        
-                    </v-card>
-                    </v-col>
-                </v-row>
-
-                                
-                            <!--- p class="my-2">
-                                <router-link to="/Forgottenpassword" >¿Olvidó su contraseña?</router-link>
-                            </p--->
-
-                        
-                    
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="login">
+    <h1 class="title">Ingresa al rey del crochet!</h1>
+    <form action class="form" @submit.prevent="login">
+      <label class="form-label" for="#email">Email:</label>
+      <input
+        v-model="email"
+        class="form-input"
+        type="email"
+        id="email"
+        required
+        placeholder="Email"
+      >
+      <label class="form-label" for="#password">Password:</label>
+      <input
+        v-model="password"
+        class="form-input"
+        type="password"
+        id="password"
+        placeholder="Password"
+      >
+      <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
+      <input class="form-submit" type="submit" value="Login">
+    </form>
+    <p class="msg">¿No tienes cuenta?
+      <router-link to="/register">Regístrate</router-link>
+    </p>
+  </div>
 </template>
 
 <script>
+import auth from "@/logic/auth";
+export default {
+  data: () => ({
+    email: "",
+    password: "",
+    error: false
+  }),
+  methods: {
+   async login() {
+  try {
+    await auth.login(this.email, this.password);
+    const user = {
+      email: this.email
+    };
+    auth.setUserLogged(user);
+    this.$router.push("/");
+  } catch (error) {
+    console.log(error);
+    this.error = true;
+  }
+}
+  }
+};
+</script>
 
-    export default {
-            name: 'Login',
-            
-            data() {
-                return {
-                    email: '',
-                    password: '',
-                    accesLevel: null,
-                    error: false,
-                    emailRules:[
-                        value => !!value || 'Por favor, ingresar un correo.',
-                        value => (value && value.length >=3) || 'El correo requiere al menos 3 caracteres.'
-                     ],
-                    rulesPassword:[
-                        value => !!value || 'Por favor, ingresar contraseña.',
-                        value => (value && value.length >=6) || 'La contraseña requiere al menos 6 caracteres.'
-                    ],
-                   
-                }
-            },
-            methods: {
-                async login(e) {
-                    e.preventDefault()
-                    try {
-                        const res = await this.axios.post("http://localhost:3001/auth/local/", {
-                            identifier: this.email,
-                            password: this.password
-                        });
-                        
-                        const { jwt, user } = res.data
-                        window.localStorage.setItem('jwt', jwt)
-                        window.localStorage.setItem('userData', JSON.stringify(user))
-                        //window.localStorage.setItem('bookmarks', JSON.stringify(user.bookmarks))
-                        this.$router.push('/HomeAdmin')
-                    } catch(error) {
-                        this.error = true
-                        this.password = ''
-                    }
-                },
-            }
-        }
-    </script>
+<style lang="scss" scoped>
+.login {
+  padding: 2rem;
+}
+.title {
+  text-align: center;
+}
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  min-width: 350px;
+  max-width: 100%;
+  background: rgba(19, 35, 47, 0.9);
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
+}
+.form-label {
+  margin-top: 2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  &:first-of-type {
+    margin-top: 0rem;
+  }
+}
+.form-input {
+  padding: 10px 15px;
+  background: none;
+  background-image: none;
+  border: 1px solid white;
+  color: white;
+  &:focus {
+    outline: 0;
+    border-color: #1ab188;
+  }
+}
+.form-submit {
+  background: #1ab188;
+  border: none;
+  color: white;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: #0b9185;
+  }
+}
+.error {
+  margin: 1rem 0 0;
+  color: whitesmoke;
+}
+.msg {
+  margin-top: 3rem;
+  text-align: center;
+}
+</style>
