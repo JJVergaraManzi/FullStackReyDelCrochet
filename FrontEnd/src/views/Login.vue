@@ -32,16 +32,17 @@
 import auth from "@/logic/auth";
 export default {
   data: () => ({
-    email: "",
-    password: "",
+    identifier: " ",
+    password: " ",
     error: false
   }),
   methods: {
    async login() {
-  try {
-    await auth.login(this.email, this.password);
-    const user = {
-      email: this.email
+    try {
+        await auth.login(this.email, this.password);
+        const user = {
+      identifier: this.email,
+      password: this.password
     };
     auth.setUserLogged(user);
     this.$router.push("/");

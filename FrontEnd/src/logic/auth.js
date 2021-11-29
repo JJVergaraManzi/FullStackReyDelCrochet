@@ -14,8 +14,8 @@ export default {
     const user = {username,name,email,password,Address,AddressNumber,Movil};
     return axios.post(ENDPOINT_PATH + "/auth/local/register", user);
   },
-  login(email, password) {
-    const user = { email, password };
+  login(identifier, password) {
+    const user = {identifier, password };
     return axios.post(ENDPOINT_PATH + "/auth/local", user);
   },
   deleteUserLogged() {
