@@ -1,15 +1,11 @@
 <template>
-  <body>     
-    <v-col
-      class="text-center"
-      cols="12">
+  <body>
       <div class="title">
-      <div class="position-absolute top-0 start-50 translate-middle-x">
-        <h1 class="bg secundary"> El Rey Del Crochet </h1>
-            <h2>Bienvenido Administrador: {{name}}</h2>
-      </div>
+        <div class="position-absolute top-0 start-50 translate-middle-x">
+          <h1 class="bg secundary"> El Rey Del Crochet </h1>
+              <h2>Bienvenido Administrador: {{data.user.name}}</h2>
+        </div>
             <div class="menu">
-              <v-card width="700px" class="mx-3 m-5 p-3 justify-center"> 
                 <v-list-item v-if="acceso==true" router to="/Admin">
                   <v-list-item-icon>
                     <i class="far fa-address-card"></i>
@@ -22,11 +18,8 @@
                   </v-list-item-icon>
                   <v-list-item-title>Salir sesión</v-list-item-title>
                 </v-list-item>
-              </v-card> 
             </div>
-            </div>         
-            </v-col> 
-        
+      </div>       
   </body> 
         
 </template>
@@ -46,7 +39,7 @@
             },
         },
     async mounted(){
-        await fetch('http://localhost:3001/api/users/user', {
+        await fetch('http://localhost:1337/api/users/user', {
                     method: 'GET',
                     headers: {
                         'Accept' : 'application/json',
@@ -81,13 +74,17 @@
   display:flex;
 }
 .menu {
-justify-content: center;
-text-align: left;
-display: grid;
- display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  min-width: 350px;
+  max-width: 100%;
+  background: rgba(19, 35, 47, 0.9);
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
 }
 .v-list-item{
 justify-content: center;
