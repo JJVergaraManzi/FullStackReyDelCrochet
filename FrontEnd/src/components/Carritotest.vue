@@ -1,6 +1,7 @@
 <template>
 
     <div>
+        
         <v-card-title><h1></h1></v-card-title>
         <div class="todo">
             <h1>Carrito de compras</h1>
@@ -16,24 +17,25 @@
                     <div class="cant"> Cantidad {{item.qty}}</div>
                 </div>
                 <div class="precio"> Precio {{item.qty * item.precio}}</div>
-
-
-
+                <div class="total"> Total {{total}}</div>
+                <div><a class="button" href="https://sandbox-portal.secure-payments.app/checkout/ec8d98bb-bfea-4968-a556-763f19d4bec1/information">Comprar!</a></div>
+                <div class="rebilly-instruments-summary"></div>
+                <div class="rebilly-instruments"></div>
             </div>
-        </div> 
-            <div class="total"> Total {{total}}</div>
+                
+            
+        </div>
     </div>
 </template>
 <script>
+import RebillyInstruments from '@rebilly/instruments';
 import logica from '../logica'
 import _ from 'lodash'
     export default {
-        props:['producto'],
+    props:['producto'],
         data(){
             return {
               shared:logica.data,
-              items:logica.data.cart
-
             }
         },
         computed: {
@@ -41,31 +43,43 @@ import _ from 'lodash'
                return _.sumBy(this.items, function(it) {
                    return  (it.precio * it.qty)
                 })
-            },
-            qtyCart(){
-                var busqueda = _.find(this.items.cart, ['id',this.item.id])
-                if(typeof busqueda == 'object'){
-                    return busqueda.qty
-                }else{
-                    return 0;
-                }
-            }
-        },
-        methods:{
-            test (value) {
-                return _.isEmpty(value)
-            },
-            addToCart(){
-                logica.add(this.items)
-            },
-            inc(){
-                logica.inc(this.items)
-            },
-            dec(){
-                logica.dec(this.items)
             }
         }
     }
+RebillyInstruments.mount({
+  publishableKey: 'sk_live_bcdRFSV_k0M7_Ayxu5CQuBjslrZgzqZmgXl2-gd',
+  organizationId: '	rey-del-crochet',
+  websiteId: 'reydelcrochet.cl',
+  apiMode: 'sandbox',
+  paymentInstruments: {
+    address: {
+      name: 'combined',
+      region: 'split',
+    }
+  },
+  items: [
+    {
+      planId: 'my-plan-id',
+      quantity: 1
+    },
+
+  ]
+
+});
+
+// Optional
+
+RebillyInstruments.on('instrument-ready', (instrument) => {
+
+  console.info('instrument-ready', instrument);
+
+});
+
+RebillyInstruments.on('purchase-completed', (purchase) => {
+
+  console.info('purchase-completed', purchase);
+
+});
 </script>
 <style>
 img {
