@@ -1,9 +1,7 @@
 <template>
 
-    <div>
-        
-        <v-card-title><h1></h1></v-card-title>
-        <div class="todo">
+    <div>      
+      <div class="todo">
             <h1>Carrito de compras</h1>
             <div class="car_pro" v-for="item in items" :item="item" :key="item.id">
                 <div class="imgsd">
@@ -17,25 +15,29 @@
                     <div class="cant"> Cantidad {{item.qty}}</div>
                 </div>
                 <div class="precio"> Precio {{item.qty * item.precio}}</div>
-                <div class="total"> Total {{total}}</div>
-                <div><a class="button" href="https://sandbox-portal.secure-payments.app/checkout/ec8d98bb-bfea-4968-a556-763f19d4bec1/information">Comprar!</a></div>
-                <div class="rebilly-instruments-summary"></div>
-                <div class="rebilly-instruments"></div>
-            </div>
-                
-            
-        </div>
+            </div>   
+            <div class="total"> Total {{total}}</div>     
+      </div>
+      <div class="my-2" v-if="total!=0">
+      <v-row align="center">
+        <v-btn 
+        color="success" 
+        rounded
+        x-large
+        href="https://sandbox-portal.secure-payments.app/checkout/ec8d98bb-bfea-4968-a556-763f19d4bec1/information">Comprar!</v-btn>
+      </v-row>
     </div>
+  </div>
 </template>
 <script>
-import RebillyInstruments from '@rebilly/instruments';
+import RebillyInstruments from '@rebilly/instruments'
 import logica from '../logica'
-import _ from 'lodash'
+import _ from "lodash"
+
     export default {
-    props:['producto'],
         data(){
             return {
-              shared:logica.data,
+              items: logica.data.cart
             }
         },
         computed: {
@@ -44,7 +46,13 @@ import _ from 'lodash'
                    return  (it.precio * it.qty)
                 })
             }
-        }
+        },
+        methods:{
+            test (value) {
+                return _.isEmpty(value)
+            }
+    }
+
     }
 RebillyInstruments.mount({
   publishableKey: 'sk_live_bcdRFSV_k0M7_Ayxu5CQuBjslrZgzqZmgXl2-gd',
