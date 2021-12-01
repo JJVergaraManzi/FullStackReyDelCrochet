@@ -51,16 +51,13 @@
   </div>
 </template>
 <script>
-import FramePay, {RebillyForm, RebillyCard,} from '@rebilly/framepay-vue';
-import Vue from 'vue'
-import RebillyInstruments from '@rebilly/instruments'
 import logica from '../logica'
 import _ from "lodash"
     export default {
-      components: {
+      /*components: {
             RebillyForm,
             RebillyCard,
-        },
+        },*/
         
         data(){
             return {
@@ -80,11 +77,11 @@ import _ from "lodash"
             },
             async handleSubmit(e){
               e.preventDefault();
-              const response = await this.$http.$post(
-                `http://localhost:1337/orders`,{
+              /*const response = await this.$http.$post(
+                `http://localhost:3001/orders`,{
 
                 }
-              )
+              )*/
             }
     }
 
