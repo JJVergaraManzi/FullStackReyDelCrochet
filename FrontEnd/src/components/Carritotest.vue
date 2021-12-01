@@ -20,21 +20,48 @@
       </div>
       <div class="my-2" v-if="total!=0">
       <v-row align="center">
-        <v-btn 
+        <button 
         color="success" 
         rounded
         x-large
-        href="https://sandbox-portal.secure-payments.app/checkout/ec8d98bb-bfea-4968-a556-763f19d4bec1/information">Comprar!</v-btn>
+        @click="handleSubmit"></button>
       </v-row>
+      <!--v-col align="center" >
+        <div title="tarjetadeCredito">
+             <rebilly-form 
+              @submit="submitHandler" 
+              @error="onError">
+              <input 
+                data-rebilly="firstName" 
+                placeholder="Nombre">
+              <br />
+              <input 
+                data-rebilly="lastName"
+                placeholder="Apellido">
+                <br/>
+              <rebilly-card></rebilly-card>
+
+              <hr/> 
+
+            </rebilly-form> 
+          </div>
+          <button type="submit">Submit</button>
+      </v-col -->
     </div>
   </div>
 </template>
 <script>
+import FramePay, {RebillyForm, RebillyCard,} from '@rebilly/framepay-vue';
+import Vue from 'vue'
 import RebillyInstruments from '@rebilly/instruments'
 import logica from '../logica'
 import _ from "lodash"
-
     export default {
+      components: {
+            RebillyForm,
+            RebillyCard,
+        },
+        
         data(){
             return {
               items: logica.data.cart
@@ -50,15 +77,27 @@ import _ from "lodash"
         methods:{
             test (value) {
                 return _.isEmpty(value)
+            },
+            async handleSubmit(e){
+              e.preventDefault();
+              const response = await this.$http.$post(
+                `http://localhost:1337/orders`,{
+
+                }
+              )
             }
     }
 
     }
-RebillyInstruments.mount({
+/*RebillyInstruments.mount({
   publishableKey: 'sk_live_bcdRFSV_k0M7_Ayxu5CQuBjslrZgzqZmgXl2-gd',
   organizationId: '	rey-del-crochet',
   websiteId: 'reydelcrochet.cl',
   apiMode: 'sandbox',
+  money:{
+    amount: (logica.data.cart.qty * logica.data.cart.precio),
+    currency: 'CLP',
+  },
   paymentInstruments: {
     address: {
       name: 'combined',
@@ -74,6 +113,11 @@ RebillyInstruments.mount({
   ]
 
 });
+const configuration = {
+    publishableKey: 'sk_live_bcdRFSV_k0M7_Ayxu5CQuBjslrZgzqZmgXl2-gd',
+    injectStyle: true,
+};
+Vue.use(FramePay, configuration);
 
 // Optional
 
@@ -87,7 +131,7 @@ RebillyInstruments.on('purchase-completed', (purchase) => {
 
   console.info('purchase-completed', purchase);
 
-});
+});*/
 </script>
 <style>
 img {
@@ -174,6 +218,64 @@ body {
 }
 .badge{
     background: blueviolet;
+}
+.ingresar {
+    position: relative;
+    border: none;
+    padding: 8px 16px;
+    color: #FFF;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    box-shadow: 0 10px 30px 0 rgba(26, 188, 156, 0.5);
+    transition: all 0.4s;
+}
+input {
+  background-color: #fff;
+  height: 36px;
+  padding: 0 8px;
+  width:100%;
+  display: block;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px 0 rgba(161,178,193,.3);
+  border: 1px solid #c4ced8;
+  transition: border .15s ease,-webkit-box-shadow .15s ease;
+  transition: border .15s ease,box-shadow .15s ease;
+  transition: border .15s ease,box-shadow .15s ease,-webkit-box-shadow .15s ease;
+  box-sizing: border-box;
+  position: relative;
+  outline: 0;
+  color: #0d2b3e;
+  font-family: Roboto,sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  color: #000;
+}
+
+button {
+    position: relative;
+    border: none;
+    padding: 8px 16px;
+    color: #FFF;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    box-shadow: 0 10px 30px 0 rgba(26, 188, 156, 0.5);
+    transition: all 0.4s;
+}
+
+button:hover {
+    background: #000000;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
   
 </style>

@@ -39,7 +39,7 @@
             },
         },
     async mounted(){
-        await fetch('http://localhost:1337/api/users/user', {
+        await fetch('http://localhost:3001/api/users/user', {
                     method: 'GET',
                     headers: {
                         'Accept' : 'application/json',
