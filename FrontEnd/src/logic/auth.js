@@ -21,4 +21,6 @@ export default {
   deleteUserLogged() {
     Cookies.remove('userLogged');
   }
+  
+  
 };

@@ -95,6 +95,13 @@
             
             </v-list-group>
         </v-list-item>
+        <p v-if="userLogged" >
+           <v-list-item class="mb-8">
+                    <v-list-item-action >
+                        <button @click="logout"><v-icon>fas fa-sign-out-alt</v-icon></button>
+                    </v-list-item-action>
+                </v-list-item>
+        </p>
       </v-list>
       <v-container fluid>
         <v-row>
