@@ -30,7 +30,6 @@
 
 <script>
 import auth from "@/logic/auth";
-
 export default {
   data: () => ({
     identifier: " ",

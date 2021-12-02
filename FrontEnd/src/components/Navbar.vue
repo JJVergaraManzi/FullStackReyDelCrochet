@@ -23,10 +23,10 @@
           <v-list-item-icon>
             <v-icon>fas fa-phone-alt</v-icon>
           </v-list-item-icon>
-
+          <p v-if="this.acceso != 2">
           <v-list-item-title>Contacto</v-list-item-title>
+          </p>
         </v-list-item>
-
         <v-list-item router to="/tienda">
             <v-list-group
               :value="false"

@@ -6,7 +6,7 @@
               <h2>Bienvenido Administrador: {{data.user.name}}</h2>
         </div>
             <div class="menu">
-                <v-list-item v-if="acceso==true" router to="/Admin">
+                <v-list-item v-if="acceso== 2" router to="/Admin">
                   <v-list-item-icon>
                     <i class="far fa-address-card"></i>
                   </v-list-item-icon>
@@ -30,7 +30,7 @@
         data() {
             return {
                 name:'',
-                acceso: true
+                acceso: "2"
             }
         },
         computed: {
@@ -39,7 +39,7 @@
             },
         },
     async mounted(){
-        await fetch('http://localhost:3001/api/users/user', {
+        await fetch('http://localhost:3001/users', {
                     method: 'GET',
                     headers: {
                         'Accept' : 'application/json',

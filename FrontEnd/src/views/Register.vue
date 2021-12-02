@@ -80,12 +80,13 @@ export default {
     Address: "",
     AddressNumber: "",
     Movil: "",
+    acceso: "",
     error: false
   }),
   methods: {
     async register() {
       try {
-        await auth.register(this.username,this.name,this.email, this.password, this.Address, this.AddressNumber,this.Movil);
+        await auth.register(this.username,this.name,this.email, this.password, this.Address, this.AddressNumber,this.Movil,this.acceso);
         this.$router.push("/")
       } catch (error) {
         console.log(error);

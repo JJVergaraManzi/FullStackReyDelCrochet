@@ -10,8 +10,8 @@ export default {
   getUserLogged() {
     return Cookies.get("userLogged");
   },
-  register(username,name,email,password,Address,AddressNumber,Movil) {
-    const user = {username,name,email,password,Address,AddressNumber,Movil};
+  register(username,name,email,password,Address,AddressNumber,Movil,acceso) {
+    const user = {username,name,email,password,Address,AddressNumber,Movil,acceso};
     return axios.post(ENDPOINT_PATH + "/auth/local/register", user);
   },
   login(identifier, password) {
@@ -20,7 +20,10 @@ export default {
   },
   deleteUserLogged() {
     Cookies.remove('userLogged');
+  },
+  agregar(precio,nombre,description,stock,creationDate,ProductID,categories,img){
+    const product = {precio,nombre,description,stock,creationDate,ProductID,categories,img};
+    return axios.post(ENDPOINT_PATH + "/products", product);
   }
-  
   
 };

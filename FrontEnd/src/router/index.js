@@ -24,7 +24,6 @@ import Admin from '../views/Admin.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import Users from '../views/Users.vue'
 import Visita from '../views/Visita.vue'
-import AgregarProd from '../views/AgregarProd.vue'
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';

@@ -1,7 +1,8 @@
 <template>
   <body> 
 <div class="home">
-  <p v-if="userLogged" >User loggued: {{userLogged}}</p>        
+  <p v-if="userLogged" >User loggued: {{userLogged}}</p>
+  <p v-if="acceso == 2"> hola</p>        
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
