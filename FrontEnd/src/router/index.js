@@ -41,11 +41,6 @@ const routes = [
     component: Users
   },
   {
-    path: '/AgregarProd',
-    name: 'AgregarProd',
-    component: AgregarProd
-  },
-  {
     path: '/Visita',
     name: 'Visita',
     component: Visita

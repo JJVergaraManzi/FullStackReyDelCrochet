@@ -1,146 +1,59 @@
 <template>
-  <form>
-  <v-card width="800px" class="mx-3 m-5 p-3 ">
-    <div class="form-row">
-    <h1>Ingrese su producto</h1>
-    <div class="form-group col-md-3">
-      <label for="inputprecio">Precio</label>
-      <input 
-      type="number" 
-      v-model="precio"
-      class="form-control" 
-      id="precio" >
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputName">Nombre</label>
-      <input 
-      type="text" 
-      class="form-control" 
-      id="nombre">
-    </div>
-    <div class="form-group">
-    <div class="form-group col-md-3">
-      <label for="inputDescription">Descripción</label>
-      <input 
-      type="text" 
-      v-model="description"
-      class="form-control" 
-      id="description" 
-      rows="3">
-    </div>
-    <div class="form-group col-md-3">
-      <label for="inputStock">Cantidad</label>
-      <input 
-      type="number" 
-      v-model="stock"
-      class="form-control" 
-      id="stock">
-    </div>
+  <div class="add">
+    <h1 class="title">Agregar productos</h1>
+    <form action class="form" @submit.prevent="add">
+        <label class="form-label" for="#precio">Precio:</label>
+      <input
+        v-model="precio"
+        class="form-input"
+        type="precio"
+        id="precio"
+        required
+        placeholder="precio"
+      > 
+    <label class="form-label" for="#nombre">Nombre:</label>
+      <input
+        v-model="nombre"
+        class="form-input"
+        type="nombre"
+        id="nombre"
+        required
+        placeholder="nombre"
+      > 
+      <label class="form-label" for="#ProductoID">ID:</label>
+      <input
+        v-model="ProductoID"
+        class="form-input"
+        type="ProductoID"
+        id="ProductoID"
+        required
+        placeholder="ProductoID"
+      >
+      <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
+    </form>
   </div>
-  
-  <div class="form-group col-md-3">
-    <label for="inputDate">Fecha de ingreso</label>
-    <input 
-    type="date" 
-    v-model="creationDate"
-    class="form-control" 
-    id="creationDate"                                                                                                                                                                                                             
-    placeholder="Ingrese su  fecha">
-  </div>
-  <div class="form-group col-md-3">                                 
-      <label for="inputIdProduct">Id del producto</label>
-      <input 
-      type="text" 
-      v-model="productoID"                                                                                                                                                                                                                                                                                                     
-      class="form-control" 
-      id="productoID">
-    </div>
-  </div>
-  <div class="form-group col-md-4">
-    <label for="inputCategory">Categoria</label>
-    <select  class="form-control" v-model="categories"
-    id="categories" 
-    placeholder="Ingrese la categoria">
-      <option>Accesorios</option>
-      <option>Crochet</option>
-      <option>Lanas</option>
-      <option>Lanas baby</option>
-      <option>Palillos</option>
-      <option>Tijeras</option>
-      <option>Trapillos</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="InputImage">Imagen</label>
-    <input 
-    type="file"  
-    class="form-control-file"
-    accept="image/"
-    @change="uploadImage($event)"
-    id="img">
-  </div>
-  
-    
-  
-  <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
-  </v-card>
-</form>
 </template>
-
 <script>
-        import auth from "@/logic/auth";
-        export default {
-            data:() =>( {
-                    precio:'',
-                    nombre:'',
-                    description:'',
-                    stock:'',                    
-                    creationDate:'',
-                    productoID:'',
-                    categories:'',
-                    img:'',                
-                    error: false,
-                    Rules:[
-                        value => !!value || "Por favor, ingrese los datos."
-                     ],
-                    errorMsg: "Uno de los campos esta incompleto, intentelo de nuevo."
-            }),
-            methods: {
-              uploadImage(e){
-                const image = e.target.files[0];
-                const reader = new FileReader();
-                reader.readAsDataURL(image);
-                reader.onload= e=>{
-                  this.previewImage = e.target.result;
-                  console.log(this.imagePreview);
-                };
-              },
-                async agregar() {
-                    try {
-                            await auth.agregar(this.precio,this.nombre,this.description,this.stock,this.creationDate, this.ProductoID, this.categories, this.img);
-                            const prod = { 
-                              precio: this.precio,
-                              nombre: this.nombre,
-                              description: this.description,
-                              stock: this.stock,
-                              creationDate: this.creationDate,
-                              productoID: this.ProductoID,
-                              categories: this.categories,
-                              img: this.img,
-                            };                       
-                            
-                              auth.agregar(prod);         
-                              this.$router.push("/");
-                            } catch(error) {
-                              console.log(error);
-                              this.error = true
-                            } 
-                }
-            }
-        
-        }
-    </script>
-
+import auth from "@/logic/auth";
+export default {
+  data: () => ({
+    precio: "",
+    nombre: "",
+    ProductoID: "",
+    error: false
+  }),
+  methods: {
+    async add() {
+      try {
+        await auth.add(this.precio,this.nombre,this.ProductoID);
+        this.$router.push("/")
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+};
+</script>
 <style>
 .title {
   margin: 100 px 0;
@@ -229,3 +142,4 @@ input[type=number] {
   color: #ff4a96;
 }
 </style>
+

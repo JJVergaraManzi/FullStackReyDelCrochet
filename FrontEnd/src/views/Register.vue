@@ -64,6 +64,15 @@
         id="Movil"
         placeholder="Movil"
       >
+      <label class="form-label" for="#acceso">acceso:</label>
+      <input
+        v-model="acceso"
+        class="form-input"
+        type="acceso"
+        id="acceso"
+        required
+        placeholder="acceso"
+      >
       <input class="form-submit" type="submit" value="Sign Up">
     </form>
   </div>

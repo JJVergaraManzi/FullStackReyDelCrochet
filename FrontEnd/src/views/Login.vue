@@ -19,6 +19,14 @@
         id="password"
         placeholder="Password"
       >
+       <label class="form-label" for="#acceso">Acceso:</label>
+      <input
+        v-model="acceso"
+        class="form-input"
+        type="acceso"
+        id="acceso"
+        placeholder="acceso"
+      >
       <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
       <input class="form-submit" type="submit" value="Login">
     </form>
@@ -34,6 +42,7 @@ export default {
   data: () => ({
     identifier: " ",
     password: " ",
+    acceso: " ",
     error: false
   }),
   methods: {
@@ -42,11 +51,15 @@ export default {
         await auth.login(this.email, this.password);
         const user = {
             identifier: this.email,
-            password: this.password
+            password: this.password,
         };
         auth.setUserLogged(user);
-        this.$router.push("/");
-    }    catch (error) {
+        if(this.acceso =="2"){
+        this.$router.push("/HomeAdmin");
+        }
+        this.$router.push("/")
+
+    } catch (error) {
         console.log(error);
         this.error = true;
   }
