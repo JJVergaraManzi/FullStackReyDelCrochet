@@ -64,15 +64,6 @@
         id="Movil"
         placeholder="Movil"
       >
-      <label class="form-label" for="#acceso">acceso:</label>
-      <input
-        v-model="acceso"
-        class="form-input"
-        type="acceso"
-        id="acceso"
-        required
-        placeholder="acceso"
-      >
       <input class="form-submit" type="submit" value="Sign Up">
     </form>
   </div>
@@ -89,13 +80,12 @@ export default {
     Address: "",
     AddressNumber: "",
     Movil: "",
-    acceso: "",
     error: false
   }),
   methods: {
     async register() {
       try {
-        await auth.register(this.username,this.name,this.email, this.password, this.Address, this.AddressNumber,this.Movil,this.acceso);
+        await auth.register(this.username,this.name,this.email, this.password, this.Address, this.AddressNumber,this.Movil);
         this.$router.push("/")
       } catch (error) {
         console.log(error);

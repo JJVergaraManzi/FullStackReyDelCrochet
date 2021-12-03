@@ -19,14 +19,6 @@
         id="password"
         placeholder="Password"
       >
-       <label class="form-label" for="#acceso">Acceso:</label>
-      <input
-        v-model="acceso"
-        class="form-input"
-        type="acceso"
-        id="acceso"
-        placeholder="acceso"
-      >
       <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
       <input class="form-submit" type="submit" value="Login">
     </form>
