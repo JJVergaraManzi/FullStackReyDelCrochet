@@ -10,23 +10,24 @@
           <v-list-item-icon>
             <v-icon>fas fa-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Inicio</v-list-item-title>
+          <v-list-item-title>Inicio  </v-list-item-title>
         </v-list-item>
+        <p v-if="userLogged == null" >
         <v-list-item router to="/Login">
           <v-list-item-icon>
             <i class="far fa-address-card"></i>
           </v-list-item-icon>
-
+          
           <v-list-item-title>Ingreso de usuario</v-list-item-title>
-        </v-list-item>
+        </v-list-item></p>
+          
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
             <v-icon>fas fa-phone-alt</v-icon>
           </v-list-item-icon>
-          <p v-if="this.acceso != 2">
           <v-list-item-title>Contacto</v-list-item-title>
-          </p>
         </v-list-item>
+         <p v-if="userLogged" >
         <v-list-item router to="/tienda">
             <v-list-group
               :value="false"
@@ -92,10 +93,21 @@
                   </v-list-item-icon>
                   <v-list-item-title>Trapillo</v-list-item-title>
                 </v-list-item>
-            
+                
             </v-list-group>
         </v-list-item>
-        <p v-if="userLogged" >
+                  <v-list-item router to="/Admin">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                  <v-list-item-title>Ingreso de productos</v-list-item-title>
+                </v-list-item>
+                 <v-list-item router to="/Visita">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                  <v-list-item-title>Ver productos </v-list-item-title>
+                </v-list-item>
            <v-list-item class="mb-8">
                     <v-list-item-action >
                         <button @click="logout"><v-icon>fas fa-sign-out-alt</v-icon></button>
