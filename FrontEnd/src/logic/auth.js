@@ -1,6 +1,6 @@
 import axios from "axios";
 import Cookies from "js-cookie";
-import { findByName } from "../../../BackEnd/Backend/api/category/controllers/category";
+//import { findByName } from "../../../BackEnd/Backend/api/category/controllers/category";
 
 const ENDPOINT_PATH = "http://localhost:3001";
 
@@ -27,7 +27,7 @@ export default {
     return axios.post(ENDPOINT_PATH + "/products", products);
   },
   find(name){
-    const category = {name};
+    //const category = {name};
     return axios.get(name)
   }
   
