@@ -37,8 +37,8 @@ export default {
   text-align: center;
 
 }
-body {
-  background: #eee;
+.body {
+  background: rgb(207, 16, 16);
 }
 .global {
   display:flex;

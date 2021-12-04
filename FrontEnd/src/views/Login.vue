@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1 class="title">Ingresa al rey del crochet!</h1>
+    <h1 class="title">Bievenido Administrador</h1>
     <form action class="form" @submit.prevent="login">
       <label class="form-label" for="#email">Email:</label>
       <input
@@ -22,9 +22,6 @@
       <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
       <input class="form-submit" type="submit" value="Login">
     </form>
-    <p class="msg">¿No tienes cuenta?
-      <router-link to="/register">Regístrate</router-link>
-    </p>
   </div>
 </template>
 

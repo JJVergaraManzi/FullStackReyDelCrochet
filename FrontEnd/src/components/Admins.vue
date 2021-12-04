@@ -46,6 +46,29 @@
         required
         placeholder="ProductoID"
       >
+       <div class="form-group col-md-4">
+    <label for="inputCategory">Categoria</label>
+    <select  class="form-control" v-model="categoria"
+    :rules="emailRules" id="categoria" 
+    placeholder="Ingrese la categoria">
+      <option>Accesorios</option>
+      <option>Crochet</option>
+      <option>Lanas</option>
+      <option>Lanas baby</option>
+      <option>Palillos</option>
+      <option>Tijeras</option>
+      <option>Trapillos</option>
+    </select>
+  </div>
+        <div class="form-group">
+    <label for="InputImage">Imagen</label>
+    <input 
+    type="file"  
+    class="form-control-file"
+    accept="image/"
+    @change="uploadImage($event)"
+    id="img">
+  </div>
      
       <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
     </form>
@@ -60,17 +83,28 @@ export default {
     description: "",
     stock: "",
     ProductoID: "",
+    categories: "",
+    img:"",
     error: false
   }),
   methods: {
     async add() {
       try {
-        await auth.add(this.precio,this.nombre,this.description,this.stock,this.ProductoID);
+        await auth.add(this.precio,this.nombre,this.description,this.stock,this.ProductoID,this.categories,this.img);
         this.$router.push("/")
       } catch (error) {
         console.log(error);
       }
-    }
+    },
+     uploadImage(e){
+                const image = e.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(image);
+                reader.onload= e=>{
+                  this.previewImage = e.target.result;
+                  console.log(this.imagePreview);
+                };
+              },
   }
 };
 </script>

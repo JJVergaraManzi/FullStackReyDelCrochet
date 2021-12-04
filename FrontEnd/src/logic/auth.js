@@ -21,8 +21,8 @@ export default {
   deleteUserLogged() {
     Cookies.remove('userLogged');
   },
-  add(precio,nombre,description,stock,ProductoID){
-    const products = {precio,nombre,description,stock,ProductoID};
+  add(precio,nombre,description,stock,ProductoID,categories,img){
+    const products = {precio,nombre,description,stock,ProductoID,categories,img};
     return axios.post(ENDPOINT_PATH + "/products", products);
   }
   

@@ -1,5 +1,4 @@
 <template>
-    
     <v-navigation-drawer 
     permanent floating dark app src="https://blog.tejeme.com/wp-content/uploads/2019/10/orgu.jpg" >
     <v-list>
@@ -18,8 +17,8 @@
             <i class="far fa-address-card"></i>
           </v-list-item-icon>
           
-          <v-list-item-title>Ingreso de usuario </v-list-item-title>
-        </v-list-item></p>
+          <v-list-item-title>Ingreso de Administrador </v-list-item-title>
+        </v-list-item>
           
         <v-list-item  router to="/contacto">
           <v-list-item-icon>
@@ -27,7 +26,7 @@
           </v-list-item-icon>
           <v-list-item-title>Contacto</v-list-item-title>
         </v-list-item>
-         <p v-if="userLogged" >
+         
         <v-list-item router to="/tienda">
             <v-list-group
               :value="false"
@@ -120,12 +119,19 @@
           </v-col>
         </v-row>
       </v-container>
-        </v-list-item>
+        </v-list-item></p>
+        <p v-if="userLogged" >
                   <v-list-item router to="/Admin">
                   <v-list-item-icon>
                     <i class="far fa-address-card"></i>
                   </v-list-item-icon>
                   <v-list-item-title>Ingreso de productos</v-list-item-title>
+                </v-list-item>
+                <v-list-item router to="/register">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                  <v-list-item-title>Ingreso de usuario</v-list-item-title>
                 </v-list-item>
                  <v-list-item router to="/Visita">
                   <v-list-item-icon>
