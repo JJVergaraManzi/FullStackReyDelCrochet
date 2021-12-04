@@ -1,5 +1,12 @@
 <template>
   <div>
+    <template v-if="userLogged">
+  <body> 
+  <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Bienvenido Administrador</h4>
+</div>                          
+</body> 
+  </template>
   <template v-if!="userLogged">
   <body> 
   <div class="home">     
@@ -51,11 +58,7 @@
 </div>                             
 </body> 
   </template>
-    <template v-if="userLogged">
-  <body> 
-                            
-</body> 
-  </template>
+    
   </div>
    
 </template>

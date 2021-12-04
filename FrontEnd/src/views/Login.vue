@@ -1,6 +1,8 @@
 <template>
   <div class="login">
-    <h1 class="title">Bievenido Administrador</h1>
+    <div class="alert alert-danger" role="alert">
+  Ingrese solo si es administrador. <a href="#" class="alert-link" ></a>
+</div>
     <form action class="form" @submit.prevent="login">
       <label class="form-label" for="#email">Email:</label>
       <input
@@ -17,7 +19,8 @@
         class="form-input"
         type="password"
         id="password"
-        placeholder="Password"
+        required
+        placeholder="****"
       >
       <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
       <input class="form-submit" type="submit" value="Login">
@@ -43,9 +46,6 @@ export default {
             password: this.password,
         };
         auth.setUserLogged(user);
-        if(this.acceso ==="2"){
-        this.$router.push("/HomeAdmin");
-        }
         this.$router.push("/")
 
     } catch (error) {
