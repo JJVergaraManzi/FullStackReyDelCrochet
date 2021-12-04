@@ -24,7 +24,7 @@
         color="success" 
         rounded
         x-large
-        @click="handleSubmit"></button>
+        @click="handleSubmit">Comprar!</button>
       </v-row>
       <!--v-col align="center" >
         <div title="tarjetadeCredito">

@@ -115,9 +115,6 @@ body {
 .botones {
     display:flex;
 }
-.btns {
-    width:50%;
-}
 .carrito {
   width: 30%;
   background-color:#EEEEEE;
