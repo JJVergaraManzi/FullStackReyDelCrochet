@@ -20,11 +20,16 @@
       </div>
       <div class="my-2" v-if="total!=0">
       <v-row align="center">
-        <button 
+        <!--- v-btn 
         color="success" 
         rounded
         x-large
-        @click="handleSubmit">Comprar!</button>
+        @click="handleSubmit">Comprar!</v-btn --->
+        <v-btn 
+        color="success" 
+        rounded
+        x-large
+        href="https://sandbox-portal.secure-payments.app/checkout/ec8d98bb-bfea-4968-a556-763f19d4bec1/information">Comprar!</v-btn>
       </v-row>
       <!--v-col align="center" >
         <div title="tarjetadeCredito">
@@ -77,10 +82,12 @@ import _ from "lodash"
             },
             async handleSubmit(e){
               e.preventDefault();
-              /*const response = await this.$http.$post(
-                `http://localhost:3001/orders`,{
-
-                }
+              /*
+              const response =await axios.post('http://localhost:3001/orders',
+              {
+                cartDetail:this.item.nombre,
+                cartTotal: this.total
+              }
               )*/
             }
     }
