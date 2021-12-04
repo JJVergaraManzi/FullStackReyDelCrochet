@@ -17,8 +17,18 @@ import Palillos from '../views/Tiendaproductos/Palillos.vue'
 import Tijeras from '../views/Tiendaproductos/Tijeras.vue'
 import Trapillo from '../views/Tiendaproductos/Trapillo.vue'
 import Login from '../views/Login.vue'
+<<<<<<< Updated upstream
 import Homedos from '../views/Homedos.vue'
 
+=======
+import Admin from '../views/Admin.vue'
+import success from '../helper/payment/success.vue'
+import cancel from '../helper/payment/cancel.vue'
+//import Homedos from '../views/Homedos.vue'
+import HomeAdmin from '../views/HomeAdmin.vue'
+import Users from '../views/Users.vue'
+import Visita from '../views/Visita.vue'
+>>>>>>> Stashed changes
 import VueFusionCharts from 'vue-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import Charts from 'fusioncharts/fusioncharts.charts';
@@ -93,11 +103,48 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+<<<<<<< Updated upstream
   },{
     path: '/homedos',
     name: 'homedos',
     component: Homedos
   }
+=======
+  },
+  {
+    path: '/forgottenpassword',
+    name: 'Forgottenpassword',
+    component: Forgottenpassword
+  },
+  {
+    path: '/resetpassword',
+    name: 'resetpassword',
+    component: resetpassword
+  },
+ // {
+ //   path: '/Pagos',
+ //   name: 'Pagos',
+ //   component: Pagos
+ // },
+  {
+    path: '/Register',
+    name: 'Register',
+    component: Register
+  },  
+  {
+    path: '/Success',
+    name: 'Success',
+    component: success
+  },  
+  {
+    path: '/cancel',
+    name: 'cancel',
+    component: cancel
+  },
+
+
+  
+>>>>>>> Stashed changes
 ]
 
 const router = new VueRouter({

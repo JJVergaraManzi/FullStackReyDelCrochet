@@ -12,17 +12,63 @@
                     <br>
                     <div class="cant"> cantidad {{item.qty}}</div>
                 </div>
+<<<<<<< Updated upstream
                 <div class="precio"> precio {{item.qty * item.precio}}</div>
             </div>
             
             <div class="total"> total {{total}}</div>
         </div>
+=======
+                <div class="precio"> Precio {{item.qty * item.precio}}</div>
+            </div>   
+            <div class="total"> Total {{total}}</div>     
+      </div>
+      <div class="my-2" v-if="total!=0">
+      <v-row align="center">
+        <button 
+        color="success" 
+        rounded
+        x-large
+        @click="handleSubmit">Comprar</button>
+      </v-row>
+      <!--v-col align="center" >
+        <div title="tarjetadeCredito">
+             <rebilly-form 
+              @submit="submitHandler" 
+              @error="onError">
+              <input 
+                data-rebilly="firstName" 
+                placeholder="Nombre">
+              <br />
+              <input 
+                data-rebilly="lastName"
+                placeholder="Apellido">
+                <br/>
+              <rebilly-card></rebilly-card>
+
+              <hr/> 
+
+            </rebilly-form> 
+          </div>
+          <button type="submit">Submit</button>
+      </v-col -->
+>>>>>>> Stashed changes
     </div>
 </template>
 <script>
 import logica from '../logica'
+<<<<<<< Updated upstream
 import _ from 'lodash'
     export default {
+=======
+import _ from "lodash"
+import auth from "@/logic/auth";
+    export default {
+      /*components: {
+            StripeCheckout
+        },*/
+        
+>>>>>>> Stashed changes
         data(){
             return {
               items:logica.data.cart
@@ -33,11 +79,23 @@ import _ from 'lodash'
                return _.sumBy(this.items, function(it) {
                    return  (it.precio * it.qty)
                 })
-            }
+            },
         },
         methods:{
             test (value) {
                 return _.isEmpty(value)
+<<<<<<< Updated upstream
+=======
+            },
+            async handleSubmit(e){
+              e.preventDefault();
+              const response =await axios.post('http://localhost:3001/orders',
+              {
+                cartDetail:this.item.nombre,
+                cartTotal: this.total
+              }
+              )
+>>>>>>> Stashed changes
             }
         }
     }
