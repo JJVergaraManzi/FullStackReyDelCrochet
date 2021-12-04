@@ -11,5 +11,6 @@ const findByName = async ( pNombre)=> {
 
 }
 module.exports = {
-    findByName
+    findByName,
+    
 };
