@@ -47,6 +47,15 @@
       "config": {
         "policies": []
       }
+    },
+    
+    {
+      "method": "GET",
+      "path": "/categories/find/:name",
+      "handler": "category.findByName",
+      "config": {
+        "policies": []
     }
+  }
   ]
 }
