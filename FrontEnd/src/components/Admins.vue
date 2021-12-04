@@ -46,7 +46,7 @@
         required
         placeholder="ProductoID"
       >
-       <div class="form-group col-md-4">
+    <div class="form-label">
     <label for="inputCategory">Categoria</label>
     <select  class="form-control" v-model="categoria"
     :rules="emailRules" id="categoria" 
