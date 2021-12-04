@@ -20,6 +20,23 @@
         required
         placeholder="nombre"
       > 
+       <label class="form-label" for="#description">Descripcion:</label>
+      <input
+        v-model="description"
+        class="form-input"
+        type="description"
+        id="description"
+        placeholder="description"
+      >
+       <label class="form-label" for="#stock">Cantidad:</label>
+      <input
+        v-model="stock"
+        class="form-input"
+        type="stock"
+        id="stock"
+        required
+        placeholder="stock"
+      >
       <label class="form-label" for="#ProductoID">ID:</label>
       <input
         v-model="ProductoID"
@@ -29,6 +46,7 @@
         required
         placeholder="ProductoID"
       >
+     
       <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
     </form>
   </div>
@@ -39,13 +57,15 @@ export default {
   data: () => ({
     precio: "",
     nombre: "",
+    description: "",
+    stock: "",
     ProductoID: "",
     error: false
   }),
   methods: {
     async add() {
       try {
-        await auth.add(this.precio,this.nombre,this.ProductoID);
+        await auth.add(this.precio,this.nombre,this.description,this.stock,this.ProductoID);
         this.$router.push("/")
       } catch (error) {
         console.log(error);

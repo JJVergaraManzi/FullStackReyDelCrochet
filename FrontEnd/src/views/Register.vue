@@ -9,7 +9,7 @@
         type="username"
         id="username"
         required
-        placeholder="username"
+        placeholder="Usuario                                        "
       > 
     <label class="form-label" for="#name">Nombre:</label>
       <input
@@ -18,7 +18,7 @@
         type="name"
         id="name"
         required
-        placeholder="name"
+        placeholder="Nombre"
       > 
       <label class="form-label" for="#password">Password:</label>
       <input
@@ -27,7 +27,7 @@
         type="password"
         id="password"
         required
-        placeholder="Password"
+        placeholder="****"
       >
       
       <label class="form-label" for="#email">Email:</label>
@@ -37,7 +37,7 @@
         type="email"
         id="email"
         required
-        placeholder="Email"
+        placeholder="ej:ejemplo@ejemplo.com"
       >
       
       <label class="form-label" for="#Address">Direccion:</label>
@@ -46,7 +46,7 @@
         class="form-input"
         type="Address"
         id="Address"
-        placeholder="address"
+        placeholder="ej:Santiago"
       >
        <label class="form-label" for="#Addressnumber">Número de la direccion:</label>
       <input
@@ -54,7 +54,7 @@
         class="form-input"
         type="Addressnumber"
         id="Addressnumber"
-        placeholder="Addressnumber"
+        placeholder="ej:123"
       >
       <label class="form-label" for="#Movil">Contacto:</label>
       <input
@@ -62,7 +62,7 @@
         class="form-input"
         type="Movil"
         id="Movil"
-        placeholder="Movil"
+        placeholder="ej:5691234567"
       >
       <input class="form-submit" type="submit" value="Sign Up">
     </form>

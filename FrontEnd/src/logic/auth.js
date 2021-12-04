@@ -10,8 +10,8 @@ export default {
   getUserLogged() {
     return Cookies.get("userLogged");
   },
-  register(username,name,email,password,Address,AddressNumber,Movil,acceso) {
-    const user = {username,name,email,password,Address,AddressNumber,Movil,acceso};
+  register(username,name,email,password,Address,AddressNumber,Movil) {
+    const user = {username,name,email,password,Address,AddressNumber,Movil};
     return axios.post(ENDPOINT_PATH + "/auth/local/register", user);
   },
   login(identifier, password) {
@@ -21,8 +21,8 @@ export default {
   deleteUserLogged() {
     Cookies.remove('userLogged');
   },
-  add(precio,nombre,ProductoID){
-    const products = {precio,nombre,ProductoID};
+  add(precio,nombre,description,stock,ProductoID){
+    const products = {precio,nombre,description,stock,ProductoID};
     return axios.post(ENDPOINT_PATH + "/products", products);
   }
   

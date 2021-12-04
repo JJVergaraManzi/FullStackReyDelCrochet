@@ -71,7 +71,7 @@ export default {
     },
      getProducts(){
     return auth.get("products");
-  },    
+  },  
     
    methods: {
       // Log out with Userfront.logout()
@@ -79,6 +79,7 @@ export default {
         auth.logout();
       },
     },
+    
    
   
 

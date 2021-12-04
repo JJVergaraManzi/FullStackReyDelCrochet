@@ -18,7 +18,7 @@
             <i class="far fa-address-card"></i>
           </v-list-item-icon>
           
-          <v-list-item-title>Ingreso de usuario</v-list-item-title>
+          <v-list-item-title>Ingreso de usuario </v-list-item-title>
         </v-list-item></p>
           
         <v-list-item  router to="/contacto">
@@ -95,27 +95,7 @@
                 </v-list-item>
                 
             </v-list-group>
-        </v-list-item>
-                  <v-list-item router to="/Admin">
-                  <v-list-item-icon>
-                    <i class="far fa-address-card"></i>
-                  </v-list-item-icon>
-                  <v-list-item-title>Ingreso de productos</v-list-item-title>
-                </v-list-item>
-                 <v-list-item router to="/Visita">
-                  <v-list-item-icon>
-                    <i class="far fa-address-card"></i>
-                  </v-list-item-icon>
-                  <v-list-item-title>Ver productos </v-list-item-title>
-                </v-list-item>
-           <v-list-item class="mb-8">
-                    <v-list-item-action >
-                        <button @click="logout"><v-icon>fas fa-sign-out-alt</v-icon></button>
-                    </v-list-item-action>
-                </v-list-item>
-        </p>
-      </v-list>
-      <v-container fluid>
+            <v-container fluid>
         <v-row>
           <v-col        
           cols="12"
@@ -140,6 +120,27 @@
           </v-col>
         </v-row>
       </v-container>
+        </v-list-item>
+                  <v-list-item router to="/Admin">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                  <v-list-item-title>Ingreso de productos</v-list-item-title>
+                </v-list-item>
+                 <v-list-item router to="/Visita">
+                  <v-list-item-icon>
+                    <i class="far fa-address-card"></i>
+                  </v-list-item-icon>
+                  <v-list-item-title>Ver productos </v-list-item-title>
+                </v-list-item>
+           <v-list-item class="mb-8">
+                    <v-list-item-action >
+                        <button @click="logout"><v-icon>fas fa-sign-out-alt</v-icon></button>
+                    </v-list-item-action>
+                </v-list-item>
+        </p>
+      </v-list>
+      
     </v-navigation-drawer>
     
 </template>
@@ -168,7 +169,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-        this.acceso = data.acceso
+        this.acceso = data.users.acceso
         });
   },  
   methods: {

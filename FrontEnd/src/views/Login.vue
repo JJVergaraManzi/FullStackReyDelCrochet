@@ -46,7 +46,7 @@ export default {
             password: this.password,
         };
         auth.setUserLogged(user);
-        if(this.acceso =="2"){
+        if(this.acceso ==="2"){
         this.$router.push("/HomeAdmin");
         }
         this.$router.push("/")
