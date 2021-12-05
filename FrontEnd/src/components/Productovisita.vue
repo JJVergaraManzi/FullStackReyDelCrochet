@@ -28,8 +28,8 @@
                 <ul class="col mr-1 row justify-content-center ">
                 <li class=" col mr-2 text-light " style="">
                 <div class="botones justify-end">
-                    <button class="botones btns btn-lg"><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
-                    <button class="botones btns btn-lg"><p class="p-2 mb-2 bg-warning text-white aling-items-center">Editar</p></button>
+                    <button class="botones btns btn-lg" @click="inc"><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
+                    <button class="botones btns btn-lg" @click="dec"><p class="p-2 mb-2 bg-warning text-white aling-items-center">Editar</p></button>
                 </div>
                 </li>
                 </ul>
