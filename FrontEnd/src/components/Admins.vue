@@ -48,8 +48,8 @@
       >
     <div class="form-label">
     <label for="inputCategory">Categoria</label>
-    <select  class="form-control" v-model="categoria"
-    :rules="emailRules" id="categoria" 
+    <select  class="form-control" v-model="categories"
+    id="categories" 
     placeholder="Ingrese la categoria">
       <option>Accesorios</option>
       <option>Crochet</option>

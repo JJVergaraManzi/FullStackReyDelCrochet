@@ -28,7 +28,7 @@
                 <ul class="col mr-1 row justify-content-center ">
                 <li class=" col mr-2 text-light " style="">
                 <div class="botones justify-end">
-                    <button class="botones btns btn-lg" @click="borrar"><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
+                    <button class="botones btns btn-lg" @click="borrar" ><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
                     <button class="botones btns btn-lg" @click="editar"><p class="p-2 mb-2 bg-warning text-white aling-items-center">Editar</p></button>
                 </div>
                 </li>
@@ -55,8 +55,8 @@ export default {
     methods: {
     async borrar(){
       try {
-        await auth.borrar(this.productoide);
-        
+        await auth.borrar(this.producto.id);
+        this.$router.go(0)
       } catch (error) {
         console.log(error);
       }
