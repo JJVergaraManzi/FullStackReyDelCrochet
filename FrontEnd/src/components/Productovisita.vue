@@ -21,15 +21,15 @@
 
                                  <div class="mr-2">{{categoriaxd.name}} </div>
                                 </li>
-                            </ul>
-                            <span class=" qty" v-if="qtyCart>0">Cantidad {{qtyCart}}</span>    
+                            </ul>   
+                            <h5 class="card-title">{{producto.id}}</h5> 
 
                     </div>   
                 <ul class="col mr-1 row justify-content-center ">
                 <li class=" col mr-2 text-light " style="">
                 <div class="botones justify-end">
-                    <button class="botones btns btn-lg" @click="inc"><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
-                    <button class="botones btns btn-lg" @click="dec"><p class="p-2 mb-2 bg-warning text-white aling-items-center">Editar</p></button>
+                    <button class="botones btns btn-lg" @click="borrar"><p class="p-2 mb-2 bg-danger text-white aling-items-center">Eliminar</p></button>
+                    <button class="botones btns btn-lg" @click="editar"><p class="p-2 mb-2 bg-warning text-white aling-items-center">Editar</p></button>
                 </div>
                 </li>
                 </ul>
@@ -40,42 +40,46 @@
     </div>
 </template>
 <script>
-import _ from 'lodash'
-import logica from '../logica'
+import auth from "@/logic/auth";
 
 export default {
     props:['producto'],
     data(){
         return {
-            shared:logica.data
+            productoide: this.producto.id,
         }
     },
     computed: {
-        qtyCart(){
-            var busqueda = _.find(this.shared.cart, ['id',this.producto.id])
-            if(typeof busqueda == 'object'){
-               return busqueda.qty
-            }else{
-              return 0;
-            }
-        }
+        
     },
-    methods:{
-        test (value) {
-            return _.isEmpty(value)
-        },
-        addToCart(){
-            logica.add(this.producto)
-        },
-        inc(){
-            logica.inc(this.producto)
-        },
-        dec(){
-            logica.dec(this.producto)
-        }
-    }
-
-}
+    methods: {
+    async borrar(){
+      try {
+        await auth.borrar(this.productoide);
+        
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async editar() {
+      try {
+        await auth.editar(this.precio,this.nombre,this.description,this.stock,this.ProductoID,this.categories,this.img);
+        this.$router.push("/")
+      } catch (error) {
+        console.log(error);
+      }
+    },
+     uploadImage(e){
+                const image = e.target.files[0];
+                const reader = new FileReader();
+                reader.readAsDataURL(image);
+                reader.onload= e=>{
+                  this.previewImage = e.target.result;
+                  console.log(this.imagePreview);
+                };
+              },
+  }
+};
 </script>
 <style>
 .title {

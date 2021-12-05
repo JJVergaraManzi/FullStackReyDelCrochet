@@ -131,7 +131,7 @@
                   <v-list-item-icon>
                     <i class="far fa-address-card"></i>
                   </v-list-item-icon>
-                  <v-list-item-title>Ingreso de usuario</v-list-item-title>
+                  <v-list-item-title>Agregar usuario</v-list-item-title>
                 </v-list-item>
                  <v-list-item router to="/Visita">
                   <v-list-item-icon>

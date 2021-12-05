@@ -64,7 +64,7 @@
         id="Movil"
         placeholder="ej:5691234567"
       >
-      <input class="form-submit" type="submit" value="Sign Up">
+      <input class="form-submit" type="submit" value="Agregar">
     </form>
   </div>
 </template>

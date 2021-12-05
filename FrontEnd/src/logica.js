@@ -1,5 +1,7 @@
 import _ from 'lodash'
 
+const ENDPOINT_PATH = "http://localhost:3001";
+
 export default {
     data:{
         cart: []
@@ -16,6 +18,12 @@ export default {
                 stock: producto.stock,
                 qty:1,
             })
+        }
+    },
+    borr(producto){
+        var busqueda = _.find(this.data.cart, ['id',producto.id])
+        if(typeof busqueda != 'object'){
+            this.data.cart.delete(ENDPOINT_PATH + "/products/" + producto.id)
         }
     },
     inc(producto){
