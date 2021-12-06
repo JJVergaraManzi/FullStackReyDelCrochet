@@ -9,7 +9,7 @@
         type="precio"
         id="precio"
         required
-        placeholder="precio"
+        placeholder="Precio"
       > 
     <label class="form-label" for="#nombre">Nombre:</label>
       <input
@@ -18,7 +18,7 @@
         type="nombre"
         id="nombre"
         required
-        placeholder="nombre"
+        placeholder="Nombre"
       > 
        <label class="form-label" for="#description">Descripcion:</label>
       <input
@@ -26,7 +26,7 @@
         class="form-input"
         type="description"
         id="description"
-        placeholder="description"
+        placeholder="Descripcion"
       >
        <label class="form-label" for="#stock">Cantidad:</label>
       <input
@@ -35,7 +35,7 @@
         type="stock"
         id="stock"
         required
-        placeholder="stock"
+        placeholder="Cantidad"
       >
       <label class="form-label" for="#ProductoID">ID:</label>
       <input
@@ -44,7 +44,7 @@
         type="ProductoID"
         id="ProductoID"
         required
-        placeholder="ProductoID"
+        placeholder="ID"
       >
     <div class="form-label">
     <label for="#categories">Categoria</label>
@@ -52,7 +52,7 @@
     type="categories"
     id="categories" 
     placeholder="Ingrese la categoria">
-      <option>1</option>
+      <option>1 </option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
@@ -60,7 +60,9 @@
       <option>6</option>
       <option>7</option>
       <option>8</option>
+
     </select>
+
     
   </div>
     <div class="form-group">
@@ -69,28 +71,47 @@
     v-modal="img"
     type="file"  
     class="form-control-file"
-    accept="image/"
+    accept="image/*"
     @change="uploadImage($event)"
     id="img"
     placeholder="img">
   </div>
      
       <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
+      <div class="modal fade" id="modal" tabindex="-1"  aria-hidden="true" aria-label="modalTitle">
+        <div class="modal-dialog">
+          
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Producto agregado </h5>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+
+        
+      </div>
+      
     </form>
   </div>
 </template>
 <script>
 import auth from "@/logic/auth";
+import axios from "axios";
+
 
 export default {
+
   data: () => ({
+    selected: '',
     precio: "",
     nombre: "",
     description: "",
     stock: "",
     ProductoID: "",
-    categories: "",
-    img:"",
+    categories: this.categories.id,
+    img: "",
     error: false
   }),
   methods: {
@@ -98,19 +119,32 @@ export default {
       try {
         await auth.add(this.precio,this.nombre,this.description,this.stock,this.ProductoID,this.categories,this.img);
         this.$router.go(0)
+       
       } catch (error) {
         console.log(error);
       }
     },
-     uploadImage(e){
-                const image = e.target.files[0];
-                const reader = new FileReader();
-                reader.readAsDataURL(image);
-                reader.onload= e=>{
-                  this.previewImage = e.target.result;
-                  console.log(this.imagePreview);
-                };
-              },
+    uploadImage(event) {
+    const URL = 'http://localhost:3001/upload'; 
+    let data = new FormData();
+    data.append('name', 'my-picture');
+    data.append('file', event.target.files[0]); 
+
+    let config = {
+      header : {
+        'Content-Type' : 'image/jpg '
+      }
+    }
+      axios.put(
+      URL, 
+      data,
+      config
+    ).then(
+      response => {
+        console.log('image upload response > ', response)
+      }
+    )
+    }
   },
   computed:{
 
@@ -205,4 +239,5 @@ input[type=number] {
   color: #ff4a96;
 }
 </style>
+
 

@@ -23,7 +23,7 @@
         placeholder="****"
       >
       <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
-      <input class="form-submit" type="submit" value="Login">
+      <input class="form-submit" type="submit" value="Entrar">
     </form>
   </div>
 </template>

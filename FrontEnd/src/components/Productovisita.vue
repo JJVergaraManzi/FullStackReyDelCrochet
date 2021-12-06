@@ -36,7 +36,9 @@
                 <div v-if="editggg==true">
 
                         <div class="add">
+                          
                           <form action class="form" @submit.prevent="add">
+                            <button type ="button" class="btn-close btn-close-white"  v-on:click="editggg =false"  aria-label="Close"> </button>
                           <label class="form-label" for="#precio">Precio:</label>
                               <input
                                   v-model="precio2"
@@ -91,6 +93,7 @@
 
      
                           <button class="d-flex justify-content-center botones btns btn-lg" @click="editar"><p class="p-2 mb-2 bg-success text-white aling-items-center">Actualizar producto</p></button>
+                          
                           </form>
                         </div>
 

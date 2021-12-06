@@ -9,7 +9,7 @@
         type="username"
         id="username"
         required
-        placeholder="Usuario                                        "
+        placeholder="Usuario"
       > 
     <label class="form-label" for="#name">Nombre:</label>
       <input
@@ -40,7 +40,7 @@
         placeholder="ej:ejemplo@ejemplo.com"
       >
       
-      <label class="form-label" for="#Address">Direccion:</label>
+      <label class="form-label" for="#Address">Dirección:</label>
       <input
         v-model="address"
         class="form-input"
@@ -65,6 +65,7 @@
         placeholder="ej:5691234567"
       >
       <input class="form-submit" type="submit" value="Agregar">
+
     </form>
   </div>
 </template>
