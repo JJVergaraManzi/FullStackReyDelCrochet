@@ -43,7 +43,6 @@
                                   class="form-input"
                                   type="precio"
                                   id="precio"
-                                  required
                                   placeholder="precio"
                               > 
                           <label class="form-label" for="#nombre">Nombre:</label>
@@ -52,7 +51,6 @@
                                   class="form-input"
                                   type="nombre"
                                   id="nombre"
-                                  required
                                   placeholder="nombre"
                               > 
                           <label class="form-label" for="#description">Descripcion:</label>
@@ -69,7 +67,6 @@
                                   class="form-input"
                                   type="stock"
                                   id="stock"
-                                  required
                                   placeholder="stock"
                               >
                               
@@ -108,11 +105,12 @@ export default {
     props:['producto'],
     data(){
         return {
+            productoide: this.producto.id,
             precio2: "",
             nombre2: "",
             description2: "",
             stock2: "",
-            productoide: this.producto.id,
+            ProductoID2: this.producto.ProductoID,
             categories2: this.producto.categories,
             img2: this.producto.img,
             error: false,
@@ -123,7 +121,30 @@ export default {
         
     },
     methods: {
+    verificar(){
+        if(this.precio2===""){
+          console.log(this.producto.precio);
+          this.precio2===this.producto.precio;
+          console.log(this.precio2);
+        }
+        if(this.nombre2===""){
+          console.log(this.producto.nombre);
+          this.nombre2===this.producto.nombre;
+          console.log(this.nombre2);
+        }
+        if(this.description2===""){
+          console.log(this.producto.description);
+          this.description2===this.producto.description;
+          console.log(this.description2);
+        }
+        if(this.stock2===""){
+          console.log(this.producto.stock);
+          this.stock2===this.producto.stock;
+          console.log(this.stock2);
+        } 
+    },
     async borrar(){
+      this.verificar();
       try {
         await auth.borrar(this.productoide);
         this.$router.go(0)
@@ -133,7 +154,7 @@ export default {
     },
     async editar() {
       try {
-        await auth.editar(this.precio2,this.nombre2,this.description2,this.stock2,this.productoide,this.categories2, this.img2);
+        await auth.editar(this.productoide,this.precio2,this.nombre2,this.description2,this.stock2,this.ProductoID2,this.categories2, this.img2);
         this.$router.go(0)
       } catch (error) {
         console.log(error);

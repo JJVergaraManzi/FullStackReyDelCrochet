@@ -30,9 +30,9 @@ export default {
     const products = {ProductoID};
     return axios.delete(ENDPOINT_PATH + "/products/" + products.ProductoID );
   },
-  editar(precio,nombre,description,stock,ProductoID,categories,img){
-    const products = {precio,nombre,description,stock,ProductoID,categories,img};
-    return axios.put(ENDPOINT_PATH + "/products/" + products.ProductoID + "/", products);
+  editar(id,precio,nombre,description,stock,ProductoID,categories,img){
+    const products = {id,precio,nombre,description,stock,ProductoID,categories,img};
+    return axios.put(ENDPOINT_PATH + "/products/" + products.id, products);
   },
   find(name){
     //const category = {name};
