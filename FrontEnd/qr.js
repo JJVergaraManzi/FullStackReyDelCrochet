@@ -1,7 +1,7 @@
 const fs = require("fs");
 const qrcode = require("qrcode");
 
-const urlCv = "http://localhost:8080/tienda";
+const urlCv = "https://projecttics3.z21.web.core.windows.net/tienda";
 
 const run = async() => {
   const QR = await qrcode.toDataURL(urlCv)
