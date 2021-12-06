@@ -161,7 +161,7 @@ export default {
     },
     computed: {
         userLogged() {
-    return this.getUserLogged();
+        return this.getUserLogged();
     },
     },
     async mounted(){

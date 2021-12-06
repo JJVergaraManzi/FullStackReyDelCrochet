@@ -47,27 +47,32 @@
         placeholder="ProductoID"
       >
     <div class="form-label">
-    <label for="inputCategory">Categoria</label>
+    <label for="#categories">Categoria</label>
     <select  class="form-control" v-model="categories"
+    type="categories"
     id="categories" 
     placeholder="Ingrese la categoria">
-      <option>Accesorios</option>
-      <option>Crochet</option>
-      <option>Lanas</option>
-      <option>Lanas baby</option>
-      <option>Palillos</option>
-      <option>Tijeras</option>
-      <option>Trapillos</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
     </select>
+    
   </div>
-        <div class="form-group">
-    <label for="InputImage">Imagen</label>
+    <div class="form-group">
+    <label for="img">Imagen</label>
     <input 
+    v-modal="img"
     type="file"  
     class="form-control-file"
     accept="image/"
     @change="uploadImage($event)"
-    id="img">
+    id="img"
+    placeholder="img">
   </div>
      
       <button type="submit" class="btn btn-primary col-md-4">Ingresar producto</button>
@@ -76,6 +81,7 @@
 </template>
 <script>
 import auth from "@/logic/auth";
+
 export default {
   data: () => ({
     precio: "",
@@ -91,7 +97,7 @@ export default {
     async add() {
       try {
         await auth.add(this.precio,this.nombre,this.description,this.stock,this.ProductoID,this.categories,this.img);
-        this.$router.push("/")
+        this.$router.go(0)
       } catch (error) {
         console.log(error);
       }
@@ -105,6 +111,9 @@ export default {
                   console.log(this.imagePreview);
                 };
               },
+  },
+  computed:{
+
   }
 };
 </script>

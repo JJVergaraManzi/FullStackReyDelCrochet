@@ -50,8 +50,8 @@
     },
     
     {
-      "method": "GET",
-      "path": "/categories/find/:name",
+      "method": "POST",
+      "path": "/categories/:name",
       "handler": "category.findByName",
       "config": {
         "policies": []
