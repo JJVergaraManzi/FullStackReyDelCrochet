@@ -44,6 +44,7 @@
                                   type="precio"
                                   id="precio"
                                   placeholder="precio"
+                                  required
                               > 
                           <label class="form-label" for="#nombre">Nombre:</label>
                               <input
@@ -52,6 +53,7 @@
                                   type="nombre"
                                   id="nombre"
                                   placeholder="nombre"
+                                  required
                               > 
                           <label class="form-label" for="#description">Descripcion:</label>
                               <input
@@ -60,6 +62,7 @@
                                   type="description"
                                   id="description"
                                   placeholder="description"
+                                  required
                               >
                           <label class="form-label" for="#stock">Cantidad:</label>
                               <input
@@ -68,6 +71,7 @@
                                   type="stock"
                                   id="stock"
                                   placeholder="stock"
+                                  required
                               >
                               
                          <!-- <div class="form-label">
@@ -144,7 +148,6 @@ export default {
         } 
     },
     async borrar(){
-      this.verificar();
       try {
         await auth.borrar(this.productoide);
         this.$router.go(0)
